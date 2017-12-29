@@ -181,10 +181,11 @@ def config_read( cfgFName, partName ):
     keyDict = {}
     if  os.path.exists(cfgFName):     
         config.read( cfgFName, encoding='utf-8')
-        keyList = config.options(partName)
-        for vName in keyList :
-            if ('' != config.get(partName, vName)) :
-                keyDict[vName] = config.get(partName, vName)
+        if config.has_section(partName):
+            keyList = config.options(partName)
+            for vName in keyList :
+                if ('' != config.get(partName, vName)) :
+                    keyDict[vName] = config.get(partName, vName)
     else: 
         log.debug('Нет файла конфигурации '+cfgFName)
     
@@ -192,11 +193,12 @@ def config_read( cfgFName, partName ):
 
 
 
-def download( dealerName ):
+def download( cfgName ):
+    basicNamelist, basic = config_read( cfgName, 'basic' )
+    fUnitName = basic['unittest']
     pathDwnld = './tmp'
     pathPython2 = 'c:/Python27/python.exe'
     retCode = False
-    fUnitName = os.path.join( dealerName +'_unittest.py')
     if  not os.path.exists(fUnitName):
         log.debug( 'Отсутствует юниттест для загрузки прайса ' + fUnitName)
     else:
@@ -220,14 +222,14 @@ def download( dealerName ):
                 dir_afte_download = set(os.listdir(os.getcwd()))
                 new_files = list( dir_afte_download.difference(dir_befo_download))
                 if len(new_files) == 1 :   
-                    new_file = new_files[0]                                             # разархивирован ровно один файл. 
+                    new_file = new_files[0]                                             # разархивирован ровно 2 файл. 
                     new_ext  = os.path.splitext(new_file)[-1]
                     DnewFile = os.path.join( os.getcwd(),new_file)
                     new_file_date = os.path.getmtime(DnewFile)
                     log.debug( 'Файл из архива ' +DnewFile + ' имеет дату ' + time.strftime("%Y-%m-%d %H:%M:%S", time.localtime(new_file_date) )     )
                     DnewPrice = DnewFile
                 elif len(new_files) >1 :
-                    log.debug( 'В архиве не единственный файл. Надо разбираться.')
+                    log.debug( 'В архиве не два файла. Надо разбираться.')
                     DnewPrice = "dummy"
                 else:
                     log.debug( 'Нет новых файлов после разархивации. Загляни в папку юниттеста поставщика.')
@@ -236,8 +238,8 @@ def download( dealerName ):
             elif new_ext not in ( '.csv', '.htm', '.xls', '.xlsx', 'xlsb'):
                 DnewPrice = DnewFile                                             # Имя скачанного прайса
             if DnewPrice != "dummy" :
-                FoldName = 'old_' + dealerName + new_ext                         # Старая копия прайса, для сравнения даты
-                FnewName = 'new_' + dealerName + new_ext                         # Предыдущий прайс, с которым работает макрос
+                FoldName = 'old_auvix_dealer.csv'                         # Старая копия прайса, для сравнения даты
+                FnewName = 'new_auvix_dealer.csv'                         # Предыдущий прайс, с которым работает макрос
                 if  (not os.path.exists( FnewName)) or new_file_date > os.path.getmtime(FnewName) : 
                     log.debug( 'Предыдущего прайса нет или скачанный файл новее. Копируем его.' )
                     if os.path.exists( FoldName): os.remove( FoldName)
@@ -294,6 +296,9 @@ def processing(cfgFName):
     csvFName  = basic['filename_out']
     sheetName = basic['sheetname']
     piceFName = basic['filename_in']
+#    dwnlist, download = config_read( cfgFName, 'download' )
+#    print(dwnlist)
+#    unittest  = download['filename_out']
     
     if 'unittest' in basicNamelist :
         result = download(cfgFName)

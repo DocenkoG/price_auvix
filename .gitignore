@@ -9,6 +9,7 @@
 *.5
 *.sublime-workspace
 *.sublime-project
+confidential.cfg
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
