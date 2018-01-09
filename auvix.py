@@ -51,6 +51,33 @@ def getXlsxString(sh, i, in_columns_j):
 
 
 
+def convert_csv2csv( cfg ):
+    inFfileName  = cfg.get('basic', 'filename_in')
+    outFfileName = cfg.get('basic', 'filename_out')
+    inFile  = open( inFfileName,  'r', newline='')
+    outFile = open( outFfileName, 'w', newline='')
+    outFields = cfg.options('cols_out')
+    csvReader = csv.DictReader(inFile, delimiter=';')
+    csvWriter = csv.DictWriter(outFile, fieldnames=cfg.options('cols_out'))
+
+    print(csvReader.fieldnames)
+    csvWriter.writeheader()
+    recOut = {}
+    for recIn in csvReader:
+        for outColName in outFields :
+            shablon = cfg.get('cols_out',outColName)
+            for key in csvReader.fieldnames:
+                if shablon.find(key) >= 0 :
+                    shablon = shablon.replace(key, recIn[key])
+            recOut[outColName] = shablon
+        csvWriter.writerow(recOut)
+    log.info('Обработано '+ str(csvReader.line_num) +'строк.')
+    inFile.close()
+    outFile.close()
+
+
+
+
 def convert2csv( cfgFName ):
     basicNamelist, basic = config_read( cfgFName, 'basic' )
     csvFName  = basic['filename_out']
@@ -176,16 +203,19 @@ def convert2csv( cfgFName ):
 
 
 def config_read( cfgFName, partName ):
-    config = configparser.ConfigParser()
+    global cfg
+    cfg = configparser.ConfigParser(inline_comment_prefixes=('#'))
     keyList = []
     keyDict = {}
+    if  os.path.exists('confidential.cfg'):     
+        cfg.read('confidential.cfg', encoding='utf-8')
     if  os.path.exists(cfgFName):     
-        config.read( cfgFName, encoding='utf-8')
-        if config.has_section(partName):
-            keyList = config.options(partName)
+        cfg.read( cfgFName, encoding='utf-8')
+        if cfg.has_section(partName):
+            keyList = cfg.options(partName)
             for vName in keyList :
-                if ('' != config.get(partName, vName)) :
-                    keyDict[vName] = config.get(partName, vName)
+                if ('' != cfg.get(partName, vName)) :
+                    keyDict[vName] = cfg.get(partName, vName)
     else: 
         log.debug('Нет файла конфигурации '+cfgFName)
     
@@ -195,10 +225,11 @@ def config_read( cfgFName, partName ):
 
 def download( cfgName ):
     basicNamelist, basic = config_read( cfgName, 'basic' )
-    fUnitName = basic['unittest']
+    fUnitName = cfg.get('download', 'unittest')
     pathDwnld = './tmp'
     pathPython2 = 'c:/Python27/python.exe'
     retCode = False
+    FnewName = 'new_auvix_dealer.csv'
     if  not os.path.exists(fUnitName):
         log.debug( 'Отсутствует юниттест для загрузки прайса ' + fUnitName)
     else:
@@ -291,20 +322,20 @@ def make_loger():
 
 
 def processing(cfgFName):
-    log.info('----------------------- config read   '+cfgFName )
+    log.info('----------------------- Processing '+cfgFName )
     basicNamelist, basic = config_read( cfgFName, 'basic' )
     csvFName  = basic['filename_out']
-    sheetName = basic['sheetname']
+#    sheetName = basic['sheetname']
     piceFName = basic['filename_in']
 #    dwnlist, download = config_read( cfgFName, 'download' )
 #    print(dwnlist)
 #    unittest  = download['filename_out']
     
-    if 'unittest' in basicNamelist :
+    if cfg.has_section('download'):
         result = download(cfgFName)
     if  is_file_fresh( piceFName, cfgFName):
         #os.system( dealerName + '_converter_xlsx.xlsm')
-        convert2csv( cfgFName)
+        convert_csv2csv(cfg)
     folderName = os.path.basename(os.getcwd())
     if os.path.exists( csvFName    ) : shutil.copy2( csvFName ,    'c://AV_PROM/prices/' + folderName +'/'+csvFName )
     if os.path.exists( 'python.log') : shutil.copy2( 'python.log', 'c://AV_PROM/prices/' + folderName +'/python.log')
