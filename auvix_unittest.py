@@ -9,20 +9,15 @@ import unittest, time, re, os
 import ConfigParser as configparser
 
 
-def config_read( cfgFName, partName ):
-    config = configparser.ConfigParser()
-    keyList = []
-    keyDict = {}
+def config_read( cfgFName ):
+    cfg = configparser.ConfigParser() # inline_comment_prefixes=('#'))
+    if  os.path.exists('confidential.cfg'):     
+        cfg.read('confidential.cfg')
     if  os.path.exists(cfgFName):     
-        config.read( cfgFName, encoding='utf-8')
-        keyList = config.options(partName)
-        for vName in keyList :
-            if ('' != config.get(partName, vName)) :
-                keyDict[vName] = config.get(partName, vName)
+        cfg.read( cfgFName)
     else: 
         log.debug('Нет файла конфигурации '+cfgFName)
-    
-    return keyList, keyDict
+    return cfg
 
     
 
@@ -97,14 +92,19 @@ class Auvix(unittest.TestCase):
 
     
     def test_auvix(self):
+        cfg = config_read('cfg_auvix.cfg')
+        login = cfg.get('download', 'логин')
+        pw    = cfg.get('download', 'пароль')
+        pause = cfg.getint('download', 'time_sleep')
+
         driver = self.driver
         driver.get(self.base_url + "/")
         driver.find_element_by_name("USER_LOGIN").click()
         driver.find_element_by_name("USER_LOGIN").clear()
-        driver.find_element_by_name("USER_LOGIN").send_keys("Av-prom2014")
+        driver.find_element_by_name("USER_LOGIN").send_keys(login)
         driver.find_element_by_name("USER_PASSWORD").click()
         driver.find_element_by_name("USER_PASSWORD").clear()
-        driver.find_element_by_name("USER_PASSWORD").send_keys("2120830Av")
+        driver.find_element_by_name("USER_PASSWORD").send_keys(pw)
         driver.find_element_by_name("Login").click()
         driver.find_element_by_link_text(u"Прайс-листы").click()
 #        driver.find_element_by_link_text(u"Прайс-лист для дилеров").click()
@@ -115,7 +115,9 @@ class Auvix(unittest.TestCase):
 #        driver.get(self.base_url + "/prices/Price_AUVIX_dealer_csv.csv")
 #        time.sleep(33)
         driver.get(self.base_url + "/prices/Price_AUVIX_dealer_csv.zip")
-        time.sleep(25)
+        print pause
+        time.sleep(pause)
+        print pause
 
     
     def is_element_present(self, how, what):
