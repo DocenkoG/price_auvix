@@ -2,6 +2,7 @@
 *.xlsx
 *.xlsb
 *.csv
+*.zip
 *.1
 *.2
 *.3
@@ -9,16 +10,12 @@
 *.5
 *.sublime-workspace
 *.sublime-project
-confidential.cfg
-
+private*
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
 *$py.class
-
-# C extensions
-*.so
 
 # Distribution / packaging
 .Python
