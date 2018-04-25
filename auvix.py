@@ -54,15 +54,24 @@ def getXlsxString(sh, i, in_columns_j):
 
 def convert_csv2csv( cfg ):
     inFfileName  = cfg.get('basic', 'filename_in')
-    outFfileName = cfg.get('basic', 'filename_out')
+    outFfileNameRUR = cfg.get('basic', 'filename_out_RUR')
+    outFfileNameEUR = cfg.get('basic', 'filename_out_EUR')
+    outFfileNameUSD = cfg.get('basic', 'filename_out_USD')
     inFile  = open( inFfileName,  'r', newline='', encoding='CP1251', errors='replace')
-    outFile = open( outFfileName, 'w', newline='')
+    outFileRUR = open( outFfileNameRUR, 'w', newline='')
+    outFileEUR = open( outFfileNameEUR, 'w', newline='')
+    outFileUSD = open( outFfileNameUSD, 'w', newline='')
+    
     outFields = cfg.options('cols_out')
     csvReader = csv.DictReader(inFile, delimiter=';')
-    csvWriter = csv.DictWriter(outFile, fieldnames=cfg.options('cols_out'))
+    csvWriterRUR = csv.DictWriter(outFileRUR, fieldnames=cfg.options('cols_out'))
+    csvWriterEUR = csv.DictWriter(outFileEUR, fieldnames=cfg.options('cols_out'))
+    csvWriterUSD = csv.DictWriter(outFileUSD, fieldnames=cfg.options('cols_out'))
 
     print(csvReader.fieldnames)
-    csvWriter.writeheader()
+    csvWriterRUR.writeheader()
+    csvWriterEUR.writeheader()
+    csvWriterUSD.writeheader()
     recOut = {}
     for recIn in csvReader:
         for outColName in outFields :
@@ -74,10 +83,19 @@ def convert_csv2csv( cfg ):
                 if shablon.find('Звоните') >=0 :
                     shablon = '0.1'
             recOut[outColName] = shablon
-        csvWriter.writerow(recOut)
+        if recOut['валюта'] == 'Рубль' :
+            csvWriterRUR.writerow(recOut)
+        elif recOut['валюта'] == 'Евро' :
+            csvWriterEUR.writerow(recOut)
+        elif recOut['валюта'] == 'USD' :
+            csvWriterUSD.writerow(recOut)
+        else :
+            log.error('нераспознана валюта "%s" для товара "%s"', recOut['валюта'], recOut['код производителя'] )
     log.info('Обработано '+ str(csvReader.line_num) +'строк.')
     inFile.close()
-    outFile.close()
+    outFileRUR.close()
+    outFileEUR.close()
+    outFileUSD.close()
 
 
 
@@ -173,7 +191,9 @@ def make_loger():
 def processing(cfgFName):
     log.info('----------------------- Processing '+cfgFName )
     cfg = config_read(cfgFName)
-    filename_out  = cfg.get('basic','filename_out')
+    outFfileNameRUR = cfg.get('basic', 'filename_out_RUR')
+    outFfileNameEUR = cfg.get('basic', 'filename_out_EUR')
+    outFfileNameUSD = cfg.get('basic', 'filename_out_USD')
     filename_in= cfg.get('basic','filename_in')
     
     if cfg.has_section('download'):
@@ -182,7 +202,9 @@ def processing(cfgFName):
         #os.system( dealerName + '_converter_xlsx.xlsm')
         convert_csv2csv(cfg)
     folderName = os.path.basename(os.getcwd())
-    if os.path.exists( filename_out): shutil.copy2( filename_out, 'c://AV_PROM/prices/' +folderName+'/'+filename_out)
+    if os.path.exists( outFfileNameRUR): shutil.copy2( outFfileNameRUR, 'c://AV_PROM/prices/' +folderName+'/'+outFfileNameRUR)
+    if os.path.exists( outFfileNameEUR): shutil.copy2( outFfileNameEUR, 'c://AV_PROM/prices/' +folderName+'/'+outFfileNameEUR)
+    if os.path.exists( outFfileNameUSD): shutil.copy2( outFfileNameUSE, 'c://AV_PROM/prices/' +folderName+'/'+outFfileNameUSD)
     if os.path.exists( 'python.log'): shutil.copy2( 'python.log', 'c://AV_PROM/prices/' +folderName+'/python.log')
     if os.path.exists( 'python.1'  ): shutil.copy2( 'python.log', 'c://AV_PROM/prices/' +folderName+'/python.1'  )
     
