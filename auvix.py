@@ -201,13 +201,7 @@ def processing(cfgFName):
     if is_file_fresh( filename_in, int(cfg.get('basic','срок годности'))):
         #os.system( dealerName + '_converter_xlsx.xlsm')
         convert_csv2csv(cfg)
-    folderName = os.path.basename(os.getcwd())
-    if os.path.exists( outFfileNameRUR): shutil.copy2( outFfileNameRUR, 'c://AV_PROM/prices/' +folderName+'/'+outFfileNameRUR)
-    if os.path.exists( outFfileNameEUR): shutil.copy2( outFfileNameEUR, 'c://AV_PROM/prices/' +folderName+'/'+outFfileNameEUR)
-    if os.path.exists( outFfileNameUSD): shutil.copy2( outFfileNameUSD, 'c://AV_PROM/prices/' +folderName+'/'+outFfileNameUSD)
-    if os.path.exists( 'python.log'): shutil.copy2( 'python.log', 'c://AV_PROM/prices/' +folderName+'/python.log')
-    if os.path.exists( 'python.1'  ): shutil.copy2( 'python.log', 'c://AV_PROM/prices/' +folderName+'/python.1'  )
-    
+
 
 
 def main( dealerName):
