@@ -172,9 +172,9 @@ def is_file_fresh(fileName, qty_days):
         log.error('Не найден файл  '+ fileName)
         return False
 
-    if price_datetime+qty_seconds < time.time() :
-        file_age = round((time.time()-price_datetime)/24/60/60)
-        log.error('Файл "'+fileName+'" устарел!  Допустимый период '+ str(qty_days)+' дней, а ему ' + str(file_age) )
+    file_age = round((time.time() - price_datetime) / 24 / 60 / 60)
+    if file_age > qty_days :
+        log.error('Файл "' + fileName + '" устарел! Допустимый период ' + str(qty_days)+' дней, а ему ' + str(file_age))
         return False
     else:
         return True
