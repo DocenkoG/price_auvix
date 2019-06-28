@@ -188,33 +188,33 @@ def make_loger():
 
 
 
-def processing(cfgFName):
-    log.info('----------------------- Processing '+cfgFName )
-    cfg = config_read(cfgFName)
-    outFfileNameRUR = cfg.get('basic', 'filename_out_RUR')
-    outFfileNameEUR = cfg.get('basic', 'filename_out_EUR')
-    outFfileNameUSD = cfg.get('basic', 'filename_out_USD')
-    filename_in= cfg.get('basic','filename_in')
-    
-    if cfg.has_section('download'):
-        result = download(cfg)
-    if is_file_fresh( filename_in, int(cfg.get('basic','срок годности'))):
-        #os.system( dealerName + '_converter_xlsx.xlsm')
-        convert_csv2csv(cfg)
-
-
-
-def main( dealerName):
+def main(dealerName):
     """ Обработка прайсов выполняется согласно файлов конфигурации.
     Для этого в текущей папке должны быть файлы конфигурации, описывающие
-    свойства файла и правила обработки. По одному конфигу на каждый 
+    свойства файла и правила обработки. По одному конфигу на каждый
     прайс или раздел прайса со своими правилами обработки
     """
     make_loger()
-    log.info('          '+dealerName )
+    log.info('          ' + dealerName)
+
+    rc_download = False
+    '''
+    '''
+    if os.path.exists('getting.cfg'):
+        cfg = config_read('getting.cfg')
+        filename_new_1 = cfg.get('basic','filename_new_1')
+        filename_new_2 = cfg.get('basic','filename_new_2')
+        if cfg.has_section('download'):
+            rc_download = download(cfg)
+        if not(rc_download==True or is_file_fresh( filename_new_1, int(cfg.get('basic','срок годности')))):
+            return False
     for cfgFName in os.listdir("."):
         if cfgFName.startswith("cfg") and cfgFName.endswith(".cfg"):
-            processing(cfgFName)
+            log.info('----------------------- Processing '+cfgFName )
+            cfg = config_read(cfgFName)
+            filename_in = cfg.get('basic','filename_in')
+            if rc_download==True or is_file_fresh( filename_in, int(cfg.get('basic','срок годности'))):
+                convert_excel2csv(cfg)
 
 
 if __name__ == '__main__':
