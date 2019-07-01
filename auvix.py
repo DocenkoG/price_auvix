@@ -189,6 +189,11 @@ def make_loger():
 
 
 def processing(cfgFName):
+    '''
+    Проверка и обучения работы с GIT
+    :param cfgFName:
+    :return:
+    '''
     log.info('----------------------- Processing '+cfgFName )
     cfg = config_read(cfgFName)
     outFfileNameRUR = cfg.get('basic', 'filename_out_RUR')
