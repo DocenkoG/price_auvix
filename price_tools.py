@@ -173,3 +173,22 @@ def quoted(sss):
     if ((',' in sss) or ('"' in sss) or ('\n' in sss))  and not(sss[0]=='"' and sss[-1]=='"') :
         sss = '"'+sss.replace('"','""')+'"'
     return sss
+
+
+
+def nameToId(value):
+    result = ''
+    for ch in value:
+        if (ch != " " and ch != "/" and ch != "\\" and ch != '_' and ch != "," and
+                ch != "'" and ch != "." and ch != "!" and ch != "@" and
+                ch != "#" and ch != "$" and ch != "%" and ch != "^" and ch != "&" and
+                ch != "*" and ch != "(" and ch != ")" and ch != "[" and ch != "]" and
+                ch != "{" and ch != ":" and ch != '"' and ch != ";"):
+            result = result + ch
+
+    length = len(result)
+    if length > 50:
+        point = int(length / 2)
+        result = result[:13] + result[point - 12:point + 13] + result[-12:]
+
+    return result
