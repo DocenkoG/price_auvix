@@ -335,7 +335,7 @@ def main(dealerName):
                     is_file_fresh(filename_in, int(cfg.get('basic', 'срок годности')))):
                 return False
 
-            if filename_in == 'Csv_Price_AUVIX_dealer.csv':
+            if filename_in == 'Price_AUVIX_dealer_csv.csv':
                 convert_csv2csv(cfg)
             elif filename_in == 'new_amx_ddp_msk.xlsx':
                 convert_excel2csv(cfg)
