@@ -65,18 +65,17 @@ def convert_csv2csv( cfg ):
     
     outFields = cfg.options('cols_out')
     csvReader = csv.DictReader(inFile, delimiter=';', fieldnames=[
-        'Идентификатор',
-        'Розничная цена в валюте товара',
-        'Дилерская цена в валюте товара',
-        'Наличие на складе 0 - нет/1 - есть)',
-        'Категория',
         'Модель',
-        'Название',
+        'Артикул',
+        'Наименование',
+        'Розничная цена, руб.',
+        'Дилерская цена, руб.',
+        'Гарантия',
+        'Наличие(0 - нет / 1 - есть)',
+        'Категория',
         'Производитель',
-        'Валюта товара',
-        'Дилерская цена в рублях',
         'Информация'
-        ])
+    ])
     csvWriterRUR = csv.DictWriter(outFileRUR, fieldnames=cfg.options('cols_out'))
     csvWriterEUR = csv.DictWriter(outFileEUR, fieldnames=cfg.options('cols_out'))
     csvWriterUSD = csv.DictWriter(outFileUSD, fieldnames=cfg.options('cols_out'))
@@ -97,14 +96,13 @@ def convert_csv2csv( cfg ):
                 if shablon.find('Звоните') >=0 :
                     shablon = '0.1'
             recOut[outColName] = shablon
-        if recOut['валюта'] == 'RUB' :
-            csvWriterRUR.writerow(recOut)
-        elif recOut['валюта'] == 'EUR' :
-            csvWriterEUR.writerow(recOut)
-        elif recOut['валюта'] == 'USD' :
-            csvWriterUSD.writerow(recOut)
-        else :
-            log.error('нераспознана валюта "%s" для товара "%s"', recOut['валюта'], recOut['код производителя'] )
+        csvWriterRUR.writerow(recOut)
+        #elif recOut['валюта'] == 'EUR' :
+        #    csvWriterEUR.writerow(recOut)
+        #elif recOut['валюта'] == 'USD' :
+        #    csvWriterUSD.writerow(recOut)
+        #else :
+        #    log.error('нераспознана валюта "%s" для товара "%s"', recOut['валюта'], recOut['код производителя'] )
     log.info('Обработано '+ str(csvReader.line_num) +'строк.')
     inFile.close()
     outFileRUR.close()
@@ -335,7 +333,7 @@ def main(dealerName):
                     is_file_fresh(filename_in, int(cfg.get('basic', 'срок годности')))):
                 return False
 
-            if filename_in == 'Price_AUVIX_dealer_csv.csv':
+            if filename_in == 'new_Price_AUVIX_dealer_csv.csv':
                 convert_csv2csv(cfg)
             elif filename_in == 'new_amx_ddp_msk.xlsx':
                 convert_excel2csv(cfg)
