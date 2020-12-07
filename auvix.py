@@ -71,7 +71,7 @@ def convert_csv2csv( cfg ):
         'Розничная цена, руб.',
         'Дилерская цена, руб.',
         'Гарантия',
-        'Наличие(0 - нет / 1 - есть)',
+        'Наличие (0 - нет/1 - есть)',
         'Категория',
         'Производитель',
         'Информация'
@@ -87,6 +87,8 @@ def convert_csv2csv( cfg ):
     csvWriterUSD.writeheader()
     recOut = {}
     for recIn in csvReader:
+        if recIn['Артикул'] == 'Артикул' :
+            continue
         for outColName in outFields :
             shablon = cfg.get('cols_out',outColName)
             for key in csvReader.fieldnames:
@@ -95,7 +97,7 @@ def convert_csv2csv( cfg ):
             if outColName in('закупка','продажа'):
                 if shablon.find('Звоните') >=0 :
                     shablon = '0.1'
-            recOut[outColName] = shablon
+            recOut[outColName] = shablon.encode('cp1251', errors='replace').decode('cp1251')
         csvWriterRUR.writerow(recOut)
         #elif recOut['валюта'] == 'EUR' :
         #    csvWriterEUR.writerow(recOut)
