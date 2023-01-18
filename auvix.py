@@ -431,44 +431,31 @@ def make_loger():
 
 
 def main(dealerName):
-    """ Обработка прайсов выполняется согласно файлов конфигурации.
-    Для этого в текущей папке должны быть файлы конфигурации, описывающие
-    свойства файла и правила обработки. По одному конфигу на каждый
-    прайс или раздел прайса со своими правилами обработки
+    """ Нестандартно.
+    Один файл скачивается, другой приходит по почте.
     """
     make_loger()
-    log.info('          ' + dealerName)
 
-    rc_download = False
-    '''
-    '''
-    if os.path.exists('getting.cfg'):
-        cfg = config_read('getting.cfg')
-        filename_new = cfg.get('basic','filename_new')
-        if cfg.has_section('download'):
-            rc_download = download(cfg)
-        if not(rc_download==True or is_file_fresh( filename_new, int(cfg.get('basic','срок годности')))):
-            return False
     for cfgFName in os.listdir("."):
         if cfgFName.startswith("cfg") and cfgFName.endswith(".cfg"):
             log.info('----------------------- Processing '+cfgFName )
             cfg = config_read(cfgFName)
-            rc_download = False
-            if cfg.has_section('download'):
-                print("Download ...")
-                rc_download = download(cfg)
-            filename_in = cfg.get('basic','filename_in')
-            if not (rc_download is True or
-                    not cfg.has_option('basic','срок годности') or
-                    is_file_fresh(filename_in, int(cfg.get('basic', 'срок годности')))):
-                return False
-
+            filename_in = cfg.get('basic', 'filename_in')
             if filename_in == 'new_Price_AUVIX_dealer_csv.csv':
+                print("Download AUVIX ...")
+                rc_download = download(cfg)
+                if not (rc_download is True or
+                        not cfg.has_option('basic', 'срок годности') or
+                        is_file_fresh(filename_in, int(cfg.get('basic', 'срок годности')))):
+                    return False
                 convert_csv2csv(cfg)
             elif filename_in == 'new_amx_ddp_msk.xlsx':
                 convert_excel2csv(cfg)
             else:
                 log.error('Не ожидаемый файл %s', filename_in)
+
+
+
 
 if __name__ == '__main__':
     myName = os.path.basename(os.path.splitext(sys.argv[0])[0])
