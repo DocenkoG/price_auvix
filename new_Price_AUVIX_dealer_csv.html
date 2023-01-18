@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+<meta charset=UTF-8>
+<title>Auvix: Авторизация</title>
+<script type='text/javascript'>window.mod_pagespeed_start = Number(new Date());</script><script type="text/javascript" data-pagespeed-no-defer>(function(){function d(b){var a=window;if(a.addEventListener)a.addEventListener("load",b,!1);else if(a.attachEvent)a.attachEvent("onload",b);else{var c=a.onload;a.onload=function(){b.call(this);c&&c.call(this)}}}var p=Date.now||function(){return+new Date};window.pagespeed=window.pagespeed||{};var q=window.pagespeed;function r(){this.a=!0}r.prototype.c=function(b){b=parseInt(b.substring(0,b.indexOf(" ")),10);return!isNaN(b)&&b<=p()};r.prototype.hasExpired=r.prototype.c;r.prototype.b=function(b){return b.substring(b.indexOf(" ",b.indexOf(" ")+1)+1)};r.prototype.getData=r.prototype.b;r.prototype.f=function(b){var a=document.getElementsByTagName("script"),a=a[a.length-1];a.parentNode.replaceChild(b,a)};r.prototype.replaceLastScript=r.prototype.f;
+r.prototype.g=function(b){var a=window.localStorage.getItem("pagespeed_lsc_url:"+b),c=document.createElement(a?"style":"link");a&&!this.c(a)?(c.type="text/css",c.appendChild(document.createTextNode(this.b(a)))):(c.rel="stylesheet",c.href=b,this.a=!0);this.f(c)};r.prototype.inlineCss=r.prototype.g;
+r.prototype.h=function(b,a){var c=window.localStorage.getItem("pagespeed_lsc_url:"+b+" pagespeed_lsc_hash:"+a),f=document.createElement("img");c&&!this.c(c)?f.src=this.b(c):(f.src=b,this.a=!0);for(var c=2,k=arguments.length;c<k;++c){var g=arguments[c].indexOf("=");f.setAttribute(arguments[c].substring(0,g),arguments[c].substring(g+1))}this.f(f)};r.prototype.inlineImg=r.prototype.h;
+function t(b,a,c,f){a=document.getElementsByTagName(a);for(var k=0,g=a.length;k<g;++k){var e=a[k],m=e.getAttribute("data-pagespeed-lsc-hash"),h=e.getAttribute("data-pagespeed-lsc-url");if(m&&h){h="pagespeed_lsc_url:"+h;c&&(h+=" pagespeed_lsc_hash:"+m);var l=e.getAttribute("data-pagespeed-lsc-expiry"),l=l?(new Date(l)).getTime():"",e=f(e);if(!e){var n=window.localStorage.getItem(h);n&&(e=b.b(n))}e&&(window.localStorage.setItem(h,l+" "+m+" "+e),b.a=!0)}}}
+function u(b){t(b,"img",!0,function(a){return a.src});t(b,"style",!1,function(a){return a.firstChild?a.firstChild.nodeValue:null})}
+q.i=function(){if(window.localStorage){var b=new r;q.localStorageCache=b;d(function(){u(b)});d(function(){if(b.a){for(var a=[],c=[],f=0,k=p(),g=0,e=window.localStorage.length;g<e;++g){var m=window.localStorage.key(g);if(!m.indexOf("pagespeed_lsc_url:")){var h=window.localStorage.getItem(m),l=h.indexOf(" "),n=parseInt(h.substring(0,l),10);if(!isNaN(n))if(n<=k){a.push(m);continue}else if(n<f||!f)f=n;c.push(h.substring(l+1,h.indexOf(" ",l+1)))}}k="";f&&(k="; expires="+(new Date(f)).toUTCString());document.cookie=
+"_GPSLSC="+c.join("!")+k;g=0;for(e=a.length;g<e;++g)window.localStorage.removeItem(a[g]);b.a=!1}})}};q.localStorageCacheInit=q.i;})();
+pagespeed.localStorageCacheInit();</script><link rel=stylesheet href="/A.lib,,_css,,_lib.min.css+libs,,_css,,_tiny-slider.css+libs,,_noty,,_buttons.css+assets,,_css,,_auth.min.css,Mcc.Vuz6jzIoH_.css.pagespeed.cf.xcLmHnaXiz.css">
+<style>.auth_news{text-decoration:underline;cursor:pointer;color:#0072c5;font-size:16px;font-weight:bold}.auth_news:hover{color:#ff7800}.login_events .login_events_menu table tr td{padding-top:12px}.news_content ul li{margin-bottom:5px;list-style:disc;list-style-position:inside}</style><script src="/libs/js/jquery-3.3.1.min.js.pagespeed.jm.r0B4QCxeCQ.js"></script>
+</head>
+<body>
+<script>var ym_params={ip:'212.158.165.68'};</script>
+<script>(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");ym(50131183,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true,webvisor:true,params:ym_params});</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/50131183" style="position:absolute; left:-9999px;" alt=""/></div></noscript>
+<script>(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");ym(22383154,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true,webvisor:true,ecommerce:"dataLayer"});</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/22383154" style="position:absolute; left:-9999px;" alt=""/></div></noscript>
+<div class=g-wrapper>
+<div class=g-header>
+<div class=g-inner>
+<div class=header-top>
+<div class=header-top-logo>
+<div class=logo>
+<a href="/">
+<img src="/images/b2bauvix/design2013/xlogo.png.pagespeed.ic.Sr0fSFOVTl.png" alt="AUVIX> Distribution" width=235 height=70>
+</a>
+</div> </div>
+<div class=header-top-about>Поставки профессионального аудиовизуального и телекоммуникационного
+оборудования
+</div>
+<div class=header-top-tel>+7 (495) 797-57-75<br>+7 (926) 797-57-75</div>
+</div>
+<div class=header-menu>
+<div class=header-menu-item><a href="#news" class=nav_lnk>Новости</a></div>
+<div class=header-menu-item><a href="#news" class=nav_lnk>Акции</a></div>
+<div class=header-menu-item><a href="#contacts" class=nav_lnk>Контакты</a></div>
+<div class=header-menu-item><a href="#question" class=nav_lnk>Задать вопрос</a></div>
+<div class="header-menu-item registation">
+<a href="#registration" class=nav_lnk>Регистрация</a>
+</div>
+</div>
+</div>
+</div>
+<div class=g-main>
+<div class=login-content>
+<div class=g-inner>
+<div class=auth-container>
+<div class=b-login>
+<form class=login_form data-handle=login>
+<div class=login_title>Авторизация</div>
+<div class=login_helptext></div>
+<div class=login_fields>
+<div class=login_field>
+<div class=login_label>Логин</div>
+<input name=login class=login_input maxlength=255 value="">
+</div>
+<div class=login_field>
+<div class=login_label>Пароль</div>
+<input type=password name=password class=login_input maxlength=255>
+</div>
+<div class=login_field>
+<div class=login_label>
+<input type=checkbox name=remember>
+<span>Запомнить меня</span>
+</div>
+</div>
+</div>
+<div class=login_action>
+<div class=get_password>
+<div>
+<a href="#registration" rel=nofollow>Зарегистрироваться</a>
+</div>
+<div>
+<a href="/auth/forgot_password/" rel=nofollow>
+Забыли логин или пароль?
+</a>
+</div>
+</div>
+<div>
+<button class="btn auth-btn" type=submit>Войти</button>
+</div>
+</div>
+</form>
+</div>
+<div id=login-slider>
+<a href="#advantage">
+<img src="/images/login_slider/banner_brends.jpg.pagespeed.ce.axn_cyM8k5.jpg" width=700 height=368>
+</a>
+<a href="#advantage">
+<img src="/images/login_slider/banner_click.jpg.pagespeed.ce.h7I8moOH0w.jpg" width=700 height=368>
+</a>
+<a href="#advantage">
+<img src="/images/login_slider/banner_clock.jpg.pagespeed.ce.sWMeaQXAsq.jpg" width=700 height=368>
+</a>
+<a href="#advantage">
+<img src="/images/login_slider/banner_earth.jpg.pagespeed.ce.LjnMhv-mxo.jpg" width=700 height=368>
+</a>
+<a href="#advantage">
+<img src="/images/login_slider/banner_man.jpg.pagespeed.ce.9pk120PYGA.jpg" width=700 height=368>
+</a>
+<a href="#advantage">
+<img src="/images/login_slider/banner_present.jpg.pagespeed.ce.yNG6lk2aeG.jpg" width=700 height=368>
+</a>
+</div></div>
+<script>function showLoading(text){var left=$(self).width()/2-50;var top=$(self).height()/2-50;$("body").append("<div class=\"overlay-loading\"></div><div class=\"loading\" style=\"top: "+top+"px; left:"+left+"px\"><img width=70px height=70px src=\"/images/loader.gif\"><div class=\"loading-text\">"+text+"</div></div>");}try{document.form_auth.login.focus();}catch(e){}</script></div>
+</div>
+<a name=news></a>
+<div class=login_events>
+<div class=g-inner>
+<div class=login_events_menu>
+<table>
+<thead>
+<tr>
+<th colspan=2 class=login_news><h1>Новости</h1></th>
+<th class=gap></th>
+<th class=login_action><h1>Акции</h1></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class=login_news>
+<img src="https://www.auvix.ru/upload/iblock/ba8/Infobit_200x103.jpg"><br>
+</td>
+<td class=login_news>
+<span class=auth_news data-id=231182>Infobit iShare EX400 – мощный инструмент для совместной работы и ВКС</span>
+<p>Infobit
+iShare EX400 –&nbsp;новая автономная беспроводная презентационная система для
+совместной работы и видеоконференций на базе приложения iShare.</p>
+</td>
+<td class=gap></td>
+<td class=login_action>
+<span class=auth_news data-id=231178>USB-кнопка ScreenShare Button в подарок за LED-экран QSTECH “All-in-One”</span>
+<p>Купите LED-экран QSTECH “All-in-One” серии xWall Plus под проект и получите USB-кнопку для беспроводных презентаций</p>
+</td>
+</tr>
+<tr>
+<td class=login_news>
+<img src="https://www.auvix.ru/upload/iblock/492/ITC_200x103.jpg"><br>
+</td>
+<td class=login_news>
+<span class=auth_news data-id=231154>Конференц-система ITC − комплексный подход от компании AUVIX</span>
+<p>Компания AUVIX предлагает&nbsp; конгресс-системы ITC нижнего, среднего и высокого
+ценового диапазонов, а также коммерческое аудио- и микрофонные радиосистемы</p>
+</td>
+<td class=gap></td>
+<td class=login_action>
+<span class=auth_news data-id=231131>Интерактивный комплект по специальной цене</span>
+<p>Покупайте комплект из интерактивной доски, короткофокусного проектора и настенного крепления на выгодных условиях</p>
+</td>
+</tr>
+<tr>
+<td class=login_news>
+<img src="https://www.auvix.ru/upload/iblock/ffa/Wize_200x103.jpg"><br>
+</td>
+<td class=login_news>
+<span class=auth_news data-id=231153>Моторизованные лифты Wize Heavy Duty для тяжелых проекторов</span>
+<p>Лифты Heavy Duty выдерживают нагрузку до 80 кг, выдвигаются на высоту до 4 м и
+оснащены специальной&nbsp; конструкцией для
+регулировки движения и защиты от раскачивания.</p>
+</td>
+<td class=gap></td>
+<td class=login_action>
+<span class=auth_news data-id=231107>Biamp Devio SCR-25C по специальной цене</span>
+<p>Покупайте комплект Devio SCR-25C, состоящим из аудиопроцессора и микрофона, на выгодных условиях.&nbsp;</p>
+</td>
+</tr>
+<tr>
+<td class=login_news>
+<img src="https://www.auvix.ru/upload/iblock/2ec/Auvix_new_year_anounce_200х103.jpg"><br>
+</td>
+<td class=login_news>
+<span class=auth_news data-id=231150>О работе AUVIX в предпраздничные и праздничные дни</span>
+<p><p>
+Знакомим с графиком работы компании 30 декабря – 8 января
+</p></p>
+</td>
+<td class=gap></td>
+<td class=login_action>
+<span class=auth_news data-id=231096>LED-экраны ведущих производителей со склада в Москве </span>
+<p><p>
+Хиты продаж от лидеров AV-индустрии в AUVIX
+</p></p>
+</td>
+</tr>
+<tr>
+<td class=login_news>
+<img src="https://www.auvix.ru/upload/iblock/19b/Optoma_200x103.jpg"><br>
+</td>
+<td class=login_news>
+<span class=auth_news data-id=231133>Optoma ZU725T – сверхъяркое пополнение линейки DurаCore</span>
+<p><p>
+Oproma ZU725T – новый лазерный проектор для профессиональных AV-проектов
+</p>
+<span id=bx-cursor-node> </span></p>
+</td>
+<td class=gap></td>
+<td class=login_action>
+<span class=auth_news data-id=231077>Призы покупателям рэковых стоек Wize</span>
+<p>Покупайте рэковые стойки Wize и получите в подарок сертификаты OZON</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class=login_events_text>
+<div class=login_events_close>Закрыть X</div>
+<h3 class=login_events_text_name></h3>
+<div class=news_content>
+</div>
+<table>
+<tr>
+<td class=login_events_text_html></td>
+</tr>
+</table>
+<div class=login_events_back>Назад</div>
+</div>
+</div>
+</div>
+<a name=registration></a>
+<div class=g-inner>
+<div id=registration_wrapper>
+<div class=page_wrapper>
+<h1>Регистрация</h1>
+<div>
+<div class=form data-url="">
+<div class=form_columns>
+<div class=form_column>
+<div class=form_unit_items>
+<div class="form_unit_item login">
+<div class="form__item login" style="width: 100%">
+<div class=form__label>
+<label>
+Логин <span>*</span>
+</label>
+</div>
+<div class=form__widget>
+<input class="inputfield " type=text name=login value="" maxlength="" placeholder="">
+</div>
+</div>
+</div>
+<div class="form_unit_item password">
+<div class="form__item password" style="width: 100%">
+<div class=form__label>
+<label>
+Пароль <span>*</span>
+</label>
+</div>
+<div class=form__widget>
+<input class="inputfield " type=password name=password value="" maxlength="" placeholder="">
+</div>
+</div>
+</div>
+<div class="form_unit_item confirm_password">
+<div class="form__item confirm_password" style="width: 100%">
+<div class=form__label>
+<label>
+Подтверждение пароля <span>*</span>
+</label>
+</div>
+<div class=form__widget>
+<input class="inputfield " type=password name=confirm_password value="" maxlength="" placeholder="">
+</div>
+</div>
+</div>
+<div class="form_unit_item phone">
+<div class="form__item phone" style="width: 100%">
+<div class=form__label>
+<label>
+Телефон с кодом города <span>*</span>
+</label>
+</div>
+<div class=form__widget>
+<input class="inputfield js-phone-mask" type=text name=phone value="" maxlength="" placeholder="">
+</div>
+</div>
+</div>
+<div class="form_unit_item email">
+<div class="form__item email" style="width: 100%">
+<div class=form__label>
+<label>
+Email <span>*</span>
+</label>
+</div>
+<div class=form__widget>
+<input class="inputfield " type=text name=email value="" maxlength=50 placeholder="">
+</div>
+</div>
+</div>
+<div class="form_unit_item first_name">
+<div class="form__item first_name" style="width: 100%">
+<div class=form__label>
+<label>
+Имя <span>*</span>
+</label>
+</div>
+<div class=form__widget>
+<input class="inputfield normal_input" type=text name=first_name value="" maxlength=30 placeholder="">
+</div>
+</div>
+</div>
+<div class="form_unit_item last_name">
+<div class="form__item last_name" style="width: 100%">
+<div class=form__label>
+<label>
+Фамилия <span>*</span>
+</label>
+</div>
+<div class=form__widget>
+<input class="inputfield normal_input" type=text name=last_name value="" maxlength=30 placeholder="">
+</div>
+</div>
+</div>
+<div class="form_unit_item second_name">
+<div class="form__item second_name" style="width: 100%">
+<div class=form__label>
+<label>
+Отчество </label>
+</div>
+<div class=form__widget>
+<input class="inputfield normal_input" type=text name=second_name value="" maxlength=30 placeholder="">
+</div>
+</div>
+</div>
+<div class="form_unit_item position">
+<div class="form__item position" style="width: 100%">
+<div class=form__label>
+<label>
+Должность </label>
+</div>
+<div class=form__widget>
+<input class="inputfield normal_input" type=text name=position value="" maxlength="" placeholder="">
+</div>
+</div>
+</div>
+<div class="form_unit_item partner">
+<div class="form__item partner" style="width: 100%">
+<div class=form__label>Вы уже сотрудничаете с AUVIX?</div>
+<div class=form__items__radio>
+<div class=form__item__radio>
+<div><input type=radio name=partner value=0 checked></div>
+<div>Нет</div>
+</div>
+<div class=form__item__radio>
+<div><input type=radio name=partner value=1></div>
+<div>Да</div>
+</div>
+</div>
+</div>
+</div>
+<div class="form_unit_item manager">
+<div class="form__item manager" style="width: 100%">
+<div class=form__label>
+<label>
+С кем из менеджеров AUVIX Вы уже общались? </label>
+</div>
+<div class=form__widget>
+<input class="inputfield " type=text name=manager value="" maxlength="" placeholder="">
+</div>
+</div>
+</div>
+<div class="form_unit_item distr">
+<div class="form__item distr" style="width: 100%">
+<div class=form__label>
+<label>
+С какими дистрибуторами Вы уже работаете? </label>
+</div>
+<div>
+<textarea style="height: 100px; max-width: 100%; min-width: 100%;" class="" name=distr placeholder="" maxlength=""></textarea>
+</div>
+</div> </div>
+<div class="form_unit_item subscr">
+<div class="form__item subscr" style="width: 100%">
+<div class=form__label>Подписаться на дилерскую рассылку</div>
+<div class=form__items__radio>
+<div class=form__item__radio>
+<div><input type=radio name=subscr value=0 checked></div>
+<div>Нет</div>
+</div>
+<div class=form__item__radio>
+<div><input type=radio name=subscr value=1></div>
+<div>Да</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class=form_column>
+<div class=form_unit_items>
+<div class="form_unit_item company_name">
+<div class="form__item company_name" style="width: 100%">
+<div class=form__label>
+<label>
+Юридическое название компании <span>*</span>
+</label>
+</div>
+<div class=form__widget>
+<input class="inputfield " type=text name=company_name value="" maxlength="" placeholder="">
+</div>
+</div>
+</div>
+<div class="form_unit_item city">
+<div class="form__item city" style="width: 100%">
+<div class=form__label>
+<label>
+Город <span>*</span>
+</label>
+</div>
+<div class=form__widget>
+<input class="inputfield " type=text name=city value="" maxlength="" placeholder="">
+</div>
+</div>
+</div>
+<div class="form_unit_item address">
+<div class="form__item address" style="width: 100%">
+<div class=form__label>
+<label>
+Юридический адрес <span>*</span>
+</label>
+</div>
+<div class=form__widget>
+<input class="inputfield " type=text name=address value="" maxlength="" placeholder="">
+</div>
+</div>
+</div>
+<div class="form_unit_item inn">
+<div class="form__item inn" style="width: 100%">
+<div class=form__label>
+<label>
+ИНН <span>*</span>
+</label>
+</div>
+<div class=form__widget>
+<input class="inputfield " type=text name=inn value="" maxlength="" placeholder="">
+</div>
+</div>
+</div>
+<div class="form_unit_item directior_fio">
+<div class="form__item directior_fio" style="width: 100%">
+<div class=form__label>
+<label>
+ФИО Генерального директора <span>*</span>
+</label>
+</div>
+<div class=form__widget>
+<input class="inputfield " type=text name=directior_fio value="" maxlength="" placeholder="">
+</div>
+</div>
+</div>
+<div class="form_unit_item site">
+<div class="form__item site" style="width: 100%">
+<div class=form__label>
+<label>
+Web-сайт </label>
+</div>
+<div class=form__widget>
+<input class="inputfield " type=text name=site value="" maxlength="" placeholder="">
+</div>
+</div>
+</div>
+<div class="form_unit_item prof">
+<div class="form__item prof" style="width: 100%">
+<div class=form__label>
+<label>
+Основные направления деятельности </label>
+</div>
+<div class=form__widget>
+<div><div class=checkbox-container>
+<div class="form_unit_item-checkbox checkbox-item">
+<label for="">
+<input type=checkbox name="prof[0]" value=1><span class=checkbox-label>Системная интеграция</span>
+</label>
+</div>
+<div class="form_unit_item-checkbox checkbox-item">
+<label for="">
+<input type=checkbox name="prof[1]" value=1><span class=checkbox-label>Корпоративные продажи</span>
+</label>
+</div>
+<div class="form_unit_item-checkbox checkbox-item">
+<label for="">
+<input type=checkbox name="prof[2]" value=1><span class=checkbox-label>Оптовые продажи</span>
+</label>
+</div>
+<div class="form_unit_item-checkbox checkbox-item">
+<label for="">
+<input type=checkbox name="prof[3]" value=1><span class=checkbox-label>Розничные продажи</span>
+</label>
+</div>
+<div class="form_unit_item-checkbox checkbox-item">
+<label for="">
+<input type=checkbox name="prof[4]" value=1><span class=checkbox-label>Интернет-магазин</span>
+</label>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="form_unit_item prof_dop">
+<div class="form__item prof_dop" style="width: 100%">
+<div class=form__label>
+<label>
+Дополнительная информация о направлениях деятельности Вашей компании </label>
+</div>
+<div>
+<textarea style="height: 100px; max-width: 100%; min-width: 100%;" class="" name=prof_dop placeholder="" maxlength=""></textarea>
+</div>
+</div> </div>
+<div class="form_unit_item goods">
+<div class="form__item goods" style="width: 100%">
+<div class=form__label>
+<label>
+Какие товарные категории Вас интересуют? </label>
+</div>
+<div class=form__widget>
+<div><div class=checkbox-container>
+<div class="form_unit_item-checkbox checkbox-item">
+<label for="">
+<input type=checkbox name="goods[0]" value=1><span class=checkbox-label>Проекторы</span>
+</label>
+</div>
+<div class="form_unit_item-checkbox checkbox-item">
+<label for="">
+<input type=checkbox name="goods[1]" value=1><span class=checkbox-label>Профессиональные дисплеи</span>
+</label>
+</div>
+<div class="form_unit_item-checkbox checkbox-item">
+<label for="">
+<input type=checkbox name="goods[2]" value=1><span class=checkbox-label>Интерактивные дисплеи и доски</span>
+</label>
+</div>
+<div class="form_unit_item-checkbox checkbox-item">
+<label for="">
+<input type=checkbox name="goods[3]" value=1><span class=checkbox-label>Светодиодные дисплеи</span>
+</label>
+</div>
+<div class="form_unit_item-checkbox checkbox-item">
+<label for="">
+<input type=checkbox name="goods[4]" value=1><span class=checkbox-label>Проекционные экраны</span>
+</label>
+</div>
+<div class="form_unit_item-checkbox checkbox-item">
+<label for="">
+<input type=checkbox name="goods[5]" value=1><span class=checkbox-label>Крепления и стойки</span>
+</label>
+</div>
+<div class="form_unit_item-checkbox checkbox-item">
+<label for="">
+<input type=checkbox name="goods[6]" value=1><span class=checkbox-label>Коммутация и управление</span>
+</label>
+</div>
+<div class="form_unit_item-checkbox checkbox-item">
+<label for="">
+<input type=checkbox name="goods[7]" value=1><span class=checkbox-label>Звуковое оборудование</span>
+</label>
+</div>
+<div class="form_unit_item-checkbox checkbox-item">
+<label for="">
+<input type=checkbox name="goods[8]" value=1><span class=checkbox-label>Видеоконференцсвязь</span>
+</label>
+</div>
+<div class="form_unit_item-checkbox checkbox-item">
+<label for="">
+<input type=checkbox name="goods[9]" value=1><span class=checkbox-label>Выдвижные мониторы</span>
+</label>
+</div>
+<div class="form_unit_item-checkbox checkbox-item">
+<label for="">
+<input type=checkbox name="goods[10]" value=1><span class=checkbox-label>Системы для совместной работы (BYOD)</span>
+</label>
+</div>
+</div>
+<div class=other-goods-label>Другое</div>
+<div>
+<input type=text name="goods[11]">
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class=form__button>
+<button class="btn save-btn">Отправить</button>
+</div>
+<div class="show_messages show_errors"></div>
+<div class="show_messages show_ok"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<a name=contacts></a>
+<div class=login_contacts>
+<div class=g-inner>
+<div id=contacts_wrapper>
+<div class=page_wrapper>
+<h1>Контактная информация</h1>
+<div id=login_map>
+<script charset=utf-8 async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?sid=XdOTB5iKYrHCwiEil3VUgvm0igPfz3o8&amp;width=1170&amp;height=400&amp;lang=ru_RU&amp;sourceType=constructor&amp;scroll=true"></script>
+</div>
+<table>
+<tr>
+<td class=box>
+<div class=login-contact-box>
+<img src="/images/b2bauvix/design2013/xgeo-blue.png.pagespeed.ic.ZpKZtZRtAG.png" class=geo width=20 height=29>
+<div class=login-contact-box-head>Офис</div>
+Адрес: 129085, г. Москва, Звездный бульвар, д. 21.<br>
+Телефон:
+<nobr>+7 (495) 797-57-75,</nobr>
+<nobr>+ 7 (926) 797-57-75</nobr>
+<br>
+Факс: (495) 615-20-57<br>
+График работы: 10.00 до 19.00. Выходные дни: суббота, воскресенье<br>
+<strong>Электронная почта</strong><br>
+Для запросов и предложений: <a href="mailto:info@auvix.ru">info@auvix.ru</a><br>
+</div>
+</td>
+<td class=box>
+<div class=login-contact-box>
+<img src="/images/b2bauvix/design2013/xgeo-green.png.pagespeed.ic.aNwSrI-4d_.png" class=geo width=20 height=29>
+<table>
+<tr>
+<td class=box-right>
+<div class=login-contact-box-head>Сервисный центр</div>
+Адрес: 127254, г.Москва, Огородный проезд, д.9, корп. 1, пом.№7<br>
+Телефон: +7 (495) 797-57-75 доб. 377, 378, 390<br>
+График работы: с 10.00 до 18.30.<br>
+Выходные дни: суббота, воскресенье<br>
+Электронная почта: <a href="mailto:service@auvix.ru">service@auvix.ru</a>
+</td>
+<td class=box-left>
+<div class=login-contact-box-head>Склад</div>
+Адрес: 127254, г.Москва, Огородный проезд, д.9, корп. 1<br>
+Телефон: +7 (495) 619-02-45<br>
+График работы: с 10.00 до 19.00.<br>
+Выходные дни: суббота, воскресенье<br>
+</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+<a name=question></a>
+<div class=g-inner>
+<div id=question_wrapper>
+<div class=page_wrapper>
+<h1>Задать вопрос</h1>
+<div>
+<div class="form pretty-form">
+<div class=form__items>
+<div class="form__item MESSAGE" style="width: 100%">
+<div class=form__label>
+<label>
+Сообщение <span>*</span>
+</label>
+</div>
+<div>
+<textarea style="height: 100px; max-width: 100%; min-width: 100%;" class="" name=MESSAGE placeholder="" maxlength=""></textarea>
+</div>
+</div> <div class="form__item NAME" style="width: 350px">
+<div class=form__label>
+<label>
+Имя <span>*</span>
+</label>
+</div>
+<div class=form__widget>
+<input class="inputfield normal_input" type=text name=NAME value="" maxlength="" placeholder="">
+</div>
+</div>
+<div class="form__item PHONE" style="width: 350px">
+<div class=form__label>
+<label>
+Телефон с кодом города <span>*</span>
+</label>
+</div>
+<div class=form__widget>
+<input class="inputfield js-phone-mask" type=text name=PHONE value="" maxlength="" placeholder="">
+</div>
+</div>
+<div class="form__item EMAIL" style="width: 350px">
+<div class=form__label>
+<label>
+Email <span>*</span>
+</label>
+</div>
+<div class=form__widget>
+<input class="inputfield normal_input" type=text name=EMAIL value="" maxlength="" placeholder="">
+</div>
+</div>
+<div class="form__item CITY" style="width: 350px">
+<div class=form__label>
+<label>
+Город </label>
+</div>
+<div class=form__widget>
+<input class="inputfield normal_input" type=text name=CITY value="" maxlength="" placeholder="">
+</div>
+</div>
+<div class="form__item COMPANY" style="width: 350px">
+<div class=form__label>
+<label>
+Компания </label>
+</div>
+<div class=form__widget>
+<input class="inputfield normal_input" type=text name=COMPANY value="" maxlength="" placeholder="">
+</div>
+</div>
+<div class="form__item MANAGER" style="width: 350px">
+<div class=form__label>
+<label>
+Ваш персональный менеджер </label>
+</div>
+<div class=form__widget>
+<input class="inputfield normal_input" type=text name=MANAGER value="" maxlength="" placeholder="">
+</div>
+</div>
+<input type=hidden name=YA_CLIENT_ID value="">
+<input type=hidden name=USER_ID value=0>
+</div>
+<div class=captcha-holder>
+<div>
+<img src="/recaptcha/?captcha_sid=0294ba6d1e9c92d4b0f5f53c2f0ac266" alt=CAPTCHA width=160 height=80 class=question_captcha_image>
+</div>
+<div>
+<a rel=nofollow class=refresh-captcha title="Обновить картинку">
+<img src="/images/xrefresh-icon.png.pagespeed.ic.RJYp9QSsQc.png" width=32 height=32>
+</a>
+</div>
+<div>
+<input type=text tabindex=17 id=object-20 class=form-text name=question_captcha_code value="" placeholder="Введите слово на картинке">
+</div>
+</div>
+<input type=hidden name=question_captcha_sid value=0294ba6d1e9c92d4b0f5f53c2f0ac266>
+<div class=form__button>
+<button class="btn save-btn">Отправить</button>
+</div>
+<div class="show_messages show_errors"></div>
+<div class="show_messages show_ok"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class=g-footer>
+<div class=g-inner>
+<div class=footer-wrapper>
+<div>
+<a href="http://www.auvix.ru" target=_blank>www.auvix.ru</a>
+</div>
+<div>
+<div>&copy;&nbsp;1993-2023</div>
+<div>Сайт для дилеров компании AUVIX</div>
+</div>
+<div>
+<a href="https://t.me/auvix" target=_blank title="AUVIX in Telegram"><img src="/images/xtelegram.png.pagespeed.ic.JFRmKJKTaN.png" width=32 height=32></a>
+<a href="https://zen.yandex.ru/id/596320683c50f7adf442fa90?lang=ru" target=_blank title="AUVIX in Yandex Zen"><img src="/images/xyandex_zen.png.pagespeed.ic.n6UifLrPer.png" width=32 height=32></a>
+<a href="http://www.youtube.com/channel/UCtYciOU1zLwvxs7hrZvabrA" target=_blank title="AUVIX in YouTube"><img src="/images/xyoutube.png.pagespeed.ic.0bPeZ2FN2W.png" width=32 height=32></a>
+</div>
+</div> </div>
+</div>
+</div>
+<script src="/lib/js/lib.min.js.pagespeed.ce.nRbvIKG73G.js"></script>
+<script src="/libs/noty,_jquery.noty.js+noty,_layouts,_center.js+noty,_themes,_default.js+js,_jquery.placeholder.js+js,_js.cookie.min.js+js,_tiny-slider.js+js,_tiny-slider.helper.ie8.js.pagespeed.jc.IyzhWFRNfG.js"></script><script>eval(mod_pagespeed_vsctiU7ysl);</script>
+<script>eval(mod_pagespeed_lvupjV5ZkT);</script>
+<script>eval(mod_pagespeed_Cy0P2dQdRn);</script>
+<script>eval(mod_pagespeed_vXaC25kI72);</script>
+<script>eval(mod_pagespeed_JV23ZhiPMJ);</script>
+<script>eval(mod_pagespeed_geQ6MrUuCA);</script>
+<script>eval(mod_pagespeed_FgzI_xjwMS);</script>
+<script src="/libs/js/jquery.inputmask.bundle.min.js.pagespeed.jm.dgcxVOyY-u.js"></script>
+<script src="/assets/js/auth.min.js.pagespeed.jm.6cbUuOOi5C.js"></script>
+<script>function doWithYmCounter(closure){var result=false;if(typeof yaCounter50131183!=='undefined'){result=closure();return result;}var timerId=setInterval(function(){if(typeof yaCounter50131183!=='undefined'){clearInterval(timerId);result=closure();return result;}},1000);}var setYmCookie=function(){var ya_client_id=yaCounter50131183.getClientID();Cookies.set('ya_client_id',ya_client_id);}
+doWithYmCounter(setYmCookie);</script>
+<div id=popup class=popup>
+<div class=popup_inner>
+</div>
+</div>
+<script data-pagespeed-no-defer type="text/javascript">(function(){function f(b){var a=window;if(a.addEventListener)a.addEventListener("load",b,!1);else if(a.attachEvent)a.attachEvent("onload",b);else{var c=a.onload;a.onload=function(){b.call(this);c&&c.call(this)}}};window.pagespeed=window.pagespeed||{};var k=window.pagespeed;function l(b,a,c,g,h){this.h=b;this.i=a;this.l=c;this.j=g;this.b=h;this.c=[];this.a=0}l.prototype.f=function(b){for(var a=0;250>a&&this.a<this.b.length;++a,++this.a)try{document.querySelector(this.b[this.a])&&this.c.push(this.b[this.a])}catch(c){}this.a<this.b.length?window.setTimeout(this.f.bind(this),0,b):b()};
+k.g=function(b,a,c,g,h){if(document.querySelector&&Function.prototype.bind){var d=new l(b,a,c,g,h);f(function(){window.setTimeout(function(){d.f(function(){for(var a="oh="+d.l+"&n="+d.j,a=a+"&cs=",b=0;b<d.c.length;++b){var c=0<b?",":"",c=c+encodeURIComponent(d.c[b]);if(131072<a.length+c.length)break;a+=c}k.criticalCssBeaconData=a;var b=d.h,c=d.i,e;if(window.XMLHttpRequest)e=new XMLHttpRequest;else if(window.ActiveXObject)try{e=new ActiveXObject("Msxml2.XMLHTTP")}catch(m){try{e=new ActiveXObject("Microsoft.XMLHTTP")}catch(n){}}e&&
+(e.open("POST",b+(-1==b.indexOf("?")?"?":"&")+"url="+encodeURIComponent(c)),e.setRequestHeader("Content-Type","application/x-www-form-urlencoded"),e.send(a))})},0)})}};k.criticalCssBeaconInit=k.g;})();
+pagespeed.selectors=["#login_poll","#login_poll .close","#noty_center_layout_container .noty_message","#noty_center_layout_container .noty_message .noty_text","#noty_center_layout_container li","#noty_topRight_layout_container li","#noty_topRight_layout_container li strong","#question_wrapper .form .captcha-holder","#question_wrapper .form .captcha-holder > div","#question_wrapper .form .form__button","#question_wrapper .form .form__button .btn","#question_wrapper .form .form__items","#question_wrapper h1","#question_wrapper input","#question_wrapper textarea","#registration_wrapper .captcha-holder","#registration_wrapper .captcha-holder > div","#registration_wrapper .form__button","#registration_wrapper .form__button .btn","#registration_wrapper .form__label","#registration_wrapper .form__label.attention","#registration_wrapper .form_columns","#registration_wrapper .form_columns .form_column","#registration_wrapper .form_columns .form_column .form_unit_items .form_unit_item","#registration_wrapper .form_columns .form_column .form_unit_items .form_unit_item .checkbox-container","#registration_wrapper .form_columns .form_column .form_unit_items .form_unit_item .checkbox-container .checkbox-item","#registration_wrapper .form_columns .form_column .form_unit_items .form_unit_item .form__items__radio","#registration_wrapper .form_columns .form_column .form_unit_items .form_unit_item .form__items__radio .form__item__radio","#registration_wrapper .form_columns .form_column .form_unit_items .form_unit_item .form__items__radio .form__item__radio input[type=\"radio\"]","#registration_wrapper .form_columns .form_column .form_unit_items .form_unit_item .form__items__radio .form__item__radio label","#registration_wrapper .form_columns .form_column .form_unit_items .form_unit_item textarea","#registration_wrapper .form_unit_item-checkbox","#registration_wrapper .form_unit_item-checkbox input[type=\"checkbox\"]","#registration_wrapper .form_unit_item-checkbox label","#registration_wrapper .other-goods-label","#registration_wrapper h1","#registration_wrapper label","#registration_wrapper label.attention",".attention",".auth-container",".auth-container .tns-outer .tns-controls",".auth-container .tns-outer > button",".auth-container.maintanence",".auth_news",".b-login .login_form",".b-login .login_form .get_password div",".b-login .login_form .login_action",".b-login .login_form .login_input",".b-login .login_form .login_label",".b-login .login_form .login_title",".b2b-loading",".b2b-loading img",".b2b-loading-text",".b2b-overlay-loading",".brand-img",".btn",".btn-danger",".btn-danger.active",".btn-danger.disabled",".btn-danger[disabled]",".btn-info",".btn-info.active",".btn-info.disabled",".btn-info[disabled]",".btn-inverse",".btn-inverse.active",".btn-inverse.disabled",".btn-inverse[disabled]",".btn-large",".btn-large [class^=\"icon-\"]",".btn-mini",".btn-primary",".btn-primary.active",".btn-primary.disabled",".btn-primary[disabled]",".btn-small",".btn-small [class^=\"icon-\"]",".btn-success",".btn-success.active",".btn-success.disabled",".btn-success[disabled]",".btn-warning",".btn-warning.active",".btn-warning.disabled",".btn-warning[disabled]",".btn.active",".btn.auth-btn",".btn.disabled",".btn.greenbtn",".btn.reg-btn",".btn[disabled]",".chosen-container",".chosen-container *",".chosen-container .chosen-drop",".chosen-container .chosen-results",".chosen-container .chosen-results li",".chosen-container .chosen-results li em",".chosen-container .chosen-results li.active-result",".chosen-container .chosen-results li.disabled-result",".chosen-container .chosen-results li.group-option",".chosen-container .chosen-results li.group-result",".chosen-container .chosen-results li.highlighted",".chosen-container .chosen-results li.no-results",".chosen-container .chosen-results-scroll-down span",".chosen-container .chosen-results-scroll-up span",".chosen-container .chosen-single .group-name",".chosen-container .search-choice .group-name",".chosen-container a",".chosen-container-active .chosen-choices",".chosen-container-active .chosen-choices li.search-field input[type=\"text\"]",".chosen-container-active .chosen-single",".chosen-container-active.chosen-with-drop .chosen-single",".chosen-container-active.chosen-with-drop .chosen-single div",".chosen-container-active.chosen-with-drop .chosen-single div b",".chosen-container-multi .chosen-choices",".chosen-container-multi .chosen-choices .search-choice .search-choice-close",".chosen-container-multi .chosen-choices li",".chosen-container-multi .chosen-choices li.search-choice",".chosen-container-multi .chosen-choices li.search-choice .search-choice-close",".chosen-container-multi .chosen-choices li.search-choice span",".chosen-container-multi .chosen-choices li.search-choice-disabled",".chosen-container-multi .chosen-choices li.search-choice-focus",".chosen-container-multi .chosen-choices li.search-choice-focus .search-choice-close",".chosen-container-multi .chosen-choices li.search-field",".chosen-container-multi .chosen-choices li.search-field input[type=\"text\"]",".chosen-container-multi .chosen-drop .result-selected",".chosen-container-multi .chosen-results",".chosen-container-single .chosen-default",".chosen-container-single .chosen-drop",".chosen-container-single .chosen-search",".chosen-container-single .chosen-search input[type=\"text\"]",".chosen-container-single .chosen-single",".chosen-container-single .chosen-single abbr",".chosen-container-single .chosen-single div",".chosen-container-single .chosen-single div b",".chosen-container-single .chosen-single span",".chosen-container-single .chosen-single-with-deselect span",".chosen-container-single.chosen-container-single-nosearch .chosen-search",".chosen-container-single.chosen-disabled .chosen-single abbr",".chosen-container.chosen-with-drop .chosen-drop",".chosen-disabled",".chosen-disabled .chosen-choices .search-choice .search-choice-close",".chosen-disabled .chosen-single",".chosen-rtl",".chosen-rtl .chosen-choices li",".chosen-rtl .chosen-choices li.search-choice",".chosen-rtl .chosen-choices li.search-choice .search-choice-close",".chosen-rtl .chosen-choices li.search-field input[type=\"text\"]",".chosen-rtl .chosen-results li.group-option",".chosen-rtl .chosen-search input[type=\"text\"]",".chosen-rtl .chosen-single",".chosen-rtl .chosen-single abbr",".chosen-rtl .chosen-single div",".chosen-rtl .chosen-single span",".chosen-rtl .chosen-single-with-deselect span",".chosen-rtl.chosen-container-active.chosen-with-drop .chosen-single div",".chosen-rtl.chosen-container-single .chosen-results",".chosen-rtl.chosen-container-single .chosen-single div b",".chosen-rtl.chosen-container-single.chosen-with-drop .chosen-single div b",".clear",".dash",".dot",".error",".fa",".fa-10x",".fa-1x",".fa-2x",".fa-3x",".fa-4x",".fa-500px",".fa-5x",".fa-6x",".fa-7x",".fa-8x",".fa-9x",".fa-accessible-icon",".fa-accusoft",".fa-acquisitions-incorporated",".fa-ad",".fa-address-book",".fa-address-card",".fa-adjust",".fa-adn",".fa-adversal",".fa-affiliatetheme",".fa-air-freshener",".fa-airbnb",".fa-algolia",".fa-align-center",".fa-align-justify",".fa-align-left",".fa-align-right",".fa-alipay",".fa-allergies",".fa-amazon",".fa-amazon-pay",".fa-ambulance",".fa-american-sign-language-interpreting",".fa-amilia",".fa-anchor",".fa-android",".fa-angellist",".fa-angle-double-down",".fa-angle-double-left",".fa-angle-double-right",".fa-angle-double-up",".fa-angle-down",".fa-angle-left",".fa-angle-right",".fa-angle-up",".fa-angry",".fa-angrycreative",".fa-angular",".fa-ankh",".fa-app-store",".fa-app-store-ios",".fa-apper",".fa-apple",".fa-apple-alt",".fa-apple-pay",".fa-archive",".fa-archway",".fa-arrow-alt-circle-down",".fa-arrow-alt-circle-left",".fa-arrow-alt-circle-right",".fa-arrow-alt-circle-up",".fa-arrow-circle-down",".fa-arrow-circle-left",".fa-arrow-circle-right",".fa-arrow-circle-up",".fa-arrow-down",".fa-arrow-left",".fa-arrow-right",".fa-arrow-up",".fa-arrows-alt",".fa-arrows-alt-h",".fa-arrows-alt-v",".fa-artstation",".fa-assistive-listening-systems",".fa-asterisk",".fa-asymmetrik",".fa-at",".fa-atlas",".fa-atlassian",".fa-atom",".fa-audible",".fa-audio-description",".fa-autoprefixer",".fa-avianex",".fa-aviato",".fa-award",".fa-aws",".fa-baby",".fa-baby-carriage",".fa-backspace",".fa-backward",".fa-bacon",".fa-bacteria",".fa-bacterium",".fa-bahai",".fa-balance-scale",".fa-balance-scale-left",".fa-balance-scale-right",".fa-ban",".fa-band-aid",".fa-bandcamp",".fa-barcode",".fa-bars",".fa-baseball-ball",".fa-basketball-ball",".fa-bath",".fa-battery-empty",".fa-battery-full",".fa-battery-half",".fa-battery-quarter",".fa-battery-three-quarters",".fa-battle-net",".fa-bed",".fa-beer",".fa-behance",".fa-behance-square",".fa-bell",".fa-bell-slash",".fa-bezier-curve",".fa-bible",".fa-bicycle",".fa-biking",".fa-bimobject",".fa-binoculars",".fa-biohazard",".fa-birthday-cake",".fa-bitbucket",".fa-bitcoin",".fa-bity",".fa-black-tie",".fa-blackberry",".fa-blender",".fa-blender-phone",".fa-blind",".fa-blog",".fa-blogger",".fa-blogger-b",".fa-bluetooth",".fa-bluetooth-b",".fa-bold",".fa-bolt",".fa-bomb",".fa-bone",".fa-bong",".fa-book",".fa-book-dead",".fa-book-medical",".fa-book-open",".fa-book-reader",".fa-bookmark",".fa-bootstrap",".fa-border",".fa-border-all",".fa-border-none",".fa-border-style",".fa-bowling-ball",".fa-box",".fa-box-open",".fa-box-tissue",".fa-boxes",".fa-braille",".fa-brain",".fa-bread-slice",".fa-briefcase",".fa-briefcase-medical",".fa-broadcast-tower",".fa-broom",".fa-brush",".fa-btc",".fa-buffer",".fa-bug",".fa-building",".fa-bullhorn",".fa-bullseye",".fa-burn",".fa-buromobelexperte",".fa-bus",".fa-bus-alt",".fa-business-time",".fa-buy-n-large",".fa-buysellads",".fa-calculator",".fa-calendar",".fa-calendar-alt",".fa-calendar-check",".fa-calendar-day",".fa-calendar-minus",".fa-calendar-plus",".fa-calendar-times",".fa-calendar-week",".fa-camera",".fa-camera-retro",".fa-campground",".fa-canadian-maple-leaf",".fa-candy-cane",".fa-cannabis",".fa-capsules",".fa-car",".fa-car-alt",".fa-car-battery",".fa-car-crash",".fa-car-side",".fa-caravan",".fa-caret-down",".fa-caret-left",".fa-caret-right",".fa-caret-square-down",".fa-caret-square-left",".fa-caret-square-right",".fa-caret-square-up",".fa-caret-up",".fa-carrot",".fa-cart-arrow-down",".fa-cart-plus",".fa-cash-register",".fa-cat",".fa-cc-amazon-pay",".fa-cc-amex",".fa-cc-apple-pay",".fa-cc-diners-club",".fa-cc-discover",".fa-cc-jcb",".fa-cc-mastercard",".fa-cc-paypal",".fa-cc-stripe",".fa-cc-visa",".fa-centercode",".fa-centos",".fa-certificate",".fa-chair",".fa-chalkboard",".fa-chalkboard-teacher",".fa-charging-station",".fa-chart-area",".fa-chart-bar",".fa-chart-line",".fa-chart-pie",".fa-check",".fa-check-circle",".fa-check-double",".fa-check-square",".fa-cheese",".fa-chess",".fa-chess-bishop",".fa-chess-board",".fa-chess-king",".fa-chess-knight",".fa-chess-pawn",".fa-chess-queen",".fa-chess-rook",".fa-chevron-circle-down",".fa-chevron-circle-left",".fa-chevron-circle-right",".fa-chevron-circle-up",".fa-chevron-down",".fa-chevron-left",".fa-chevron-right",".fa-chevron-up",".fa-child",".fa-chrome",".fa-chromecast",".fa-church",".fa-circle",".fa-circle-notch",".fa-city",".fa-clinic-medical",".fa-clipboard",".fa-clipboard-check",".fa-clipboard-list",".fa-clock",".fa-clone",".fa-closed-captioning",".fa-cloud",".fa-cloud-download-alt",".fa-cloud-meatball",".fa-cloud-moon",".fa-cloud-moon-rain",".fa-cloud-rain",".fa-cloud-showers-heavy",".fa-cloud-sun",".fa-cloud-sun-rain",".fa-cloud-upload-alt",".fa-cloudflare",".fa-cloudscale",".fa-cloudsmith",".fa-cloudversify",".fa-cocktail",".fa-code",".fa-code-branch",".fa-codepen",".fa-codiepie",".fa-coffee",".fa-cog",".fa-cogs",".fa-coins",".fa-columns",".fa-comment",".fa-comment-alt",".fa-comment-dollar",".fa-comment-dots",".fa-comment-medical",".fa-comment-slash",".fa-comments",".fa-comments-dollar",".fa-compact-disc",".fa-compass",".fa-compress",".fa-compress-alt",".fa-compress-arrows-alt",".fa-concierge-bell",".fa-confluence",".fa-connectdevelop",".fa-contao",".fa-cookie",".fa-cookie-bite",".fa-copy",".fa-copyright",".fa-cotton-bureau",".fa-couch",".fa-cpanel",".fa-creative-commons",".fa-creative-commons-by",".fa-creative-commons-nc",".fa-creative-commons-nc-eu",".fa-creative-commons-nc-jp",".fa-creative-commons-nd",".fa-creative-commons-pd",".fa-creative-commons-pd-alt",".fa-creative-commons-remix",".fa-creative-commons-sa",".fa-creative-commons-sampling",".fa-creative-commons-sampling-plus",".fa-creative-commons-share",".fa-creative-commons-zero",".fa-credit-card",".fa-critical-role",".fa-crop",".fa-crop-alt",".fa-cross",".fa-crosshairs",".fa-crow",".fa-crown",".fa-crutch",".fa-css3",".fa-css3-alt",".fa-cube",".fa-cubes",".fa-cut",".fa-cuttlefish",".fa-d-and-d",".fa-d-and-d-beyond",".fa-dailymotion",".fa-dashcube",".fa-database",".fa-deaf",".fa-deezer",".fa-delicious",".fa-democrat",".fa-deploydog",".fa-deskpro",".fa-desktop",".fa-dev",".fa-deviantart",".fa-dharmachakra",".fa-dhl",".fa-diagnoses",".fa-diaspora",".fa-dice",".fa-dice-d20",".fa-dice-d6",".fa-dice-five",".fa-dice-four",".fa-dice-one",".fa-dice-six",".fa-dice-three",".fa-dice-two",".fa-digg",".fa-digital-ocean",".fa-digital-tachograph",".fa-directions",".fa-discord",".fa-discourse",".fa-disease",".fa-divide",".fa-dizzy",".fa-dna",".fa-dochub",".fa-docker",".fa-dog",".fa-dollar-sign",".fa-dolly",".fa-dolly-flatbed",".fa-donate",".fa-door-closed",".fa-door-open",".fa-dot-circle",".fa-dove",".fa-download",".fa-draft2digital",".fa-drafting-compass",".fa-dragon",".fa-draw-polygon",".fa-dribbble",".fa-dribbble-square",".fa-dropbox",".fa-drum",".fa-drum-steelpan",".fa-drumstick-bite",".fa-drupal",".fa-dumbbell",".fa-dumpster",".fa-dumpster-fire",".fa-dungeon",".fa-dyalog",".fa-earlybirds",".fa-ebay",".fa-edge",".fa-edge-legacy",".fa-edit",".fa-egg",".fa-eject",".fa-elementor",".fa-ellipsis-h",".fa-ellipsis-v",".fa-ello",".fa-ember",".fa-empire",".fa-envelope",".fa-envelope-open",".fa-envelope-open-text",".fa-envelope-square",".fa-envira",".fa-equals",".fa-eraser",".fa-erlang",".fa-ethereum",".fa-ethernet",".fa-etsy",".fa-euro-sign",".fa-evernote",".fa-exchange-alt",".fa-exclamation",".fa-exclamation-circle",".fa-exclamation-triangle",".fa-expand",".fa-expand-alt",".fa-expand-arrows-alt",".fa-expeditedssl",".fa-external-link-alt",".fa-external-link-square-alt",".fa-eye",".fa-eye-dropper",".fa-eye-slash",".fa-facebook",".fa-facebook-f",".fa-facebook-messenger",".fa-facebook-square",".fa-fan",".fa-fantasy-flight-games",".fa-fast-backward",".fa-fast-forward",".fa-faucet",".fa-fax",".fa-feather",".fa-feather-alt",".fa-fedex",".fa-fedora",".fa-female",".fa-fighter-jet",".fa-figma",".fa-file",".fa-file-alt",".fa-file-archive",".fa-file-audio",".fa-file-code",".fa-file-contract",".fa-file-csv",".fa-file-download",".fa-file-excel",".fa-file-export",".fa-file-image",".fa-file-import",".fa-file-invoice",".fa-file-invoice-dollar",".fa-file-medical",".fa-file-medical-alt",".fa-file-pdf",".fa-file-powerpoint",".fa-file-prescription",".fa-file-signature",".fa-file-upload",".fa-file-video",".fa-file-word",".fa-fill",".fa-fill-drip",".fa-film",".fa-filter",".fa-fingerprint",".fa-fire",".fa-fire-alt",".fa-fire-extinguisher",".fa-firefox",".fa-firefox-browser",".fa-first-aid",".fa-first-order",".fa-first-order-alt",".fa-firstdraft",".fa-fish",".fa-fist-raised",".fa-flag",".fa-flag-checkered",".fa-flag-usa",".fa-flask",".fa-flickr",".fa-flip-both",".fa-flip-horizontal",".fa-flip-horizontal.fa-flip-vertical",".fa-flip-vertical",".fa-flipboard",".fa-flushed",".fa-fly",".fa-folder",".fa-folder-minus",".fa-folder-open",".fa-folder-plus",".fa-font",".fa-font-awesome",".fa-font-awesome-alt",".fa-font-awesome-flag",".fa-font-awesome-logo-full",".fa-fonticons",".fa-fonticons-fi",".fa-football-ball",".fa-fort-awesome",".fa-fort-awesome-alt",".fa-forumbee",".fa-forward",".fa-foursquare",".fa-free-code-camp",".fa-freebsd",".fa-frog",".fa-frown",".fa-frown-open",".fa-fulcrum",".fa-funnel-dollar",".fa-futbol",".fa-fw",".fa-galactic-republic",".fa-galactic-senate",".fa-gamepad",".fa-gas-pump",".fa-gavel",".fa-gem",".fa-genderless",".fa-get-pocket",".fa-gg",".fa-gg-circle",".fa-ghost",".fa-gift",".fa-gifts",".fa-git",".fa-git-alt",".fa-git-square",".fa-github",".fa-github-alt",".fa-github-square",".fa-gitkraken",".fa-gitlab",".fa-gitter",".fa-glass-cheers",".fa-glass-martini",".fa-glass-martini-alt",".fa-glass-whiskey",".fa-glasses",".fa-glide",".fa-glide-g",".fa-globe",".fa-globe-africa",".fa-globe-americas",".fa-globe-asia",".fa-globe-europe",".fa-gofore",".fa-golf-ball",".fa-goodreads",".fa-goodreads-g",".fa-google",".fa-google-drive",".fa-google-pay",".fa-google-play",".fa-google-plus",".fa-google-plus-g",".fa-google-plus-square",".fa-google-wallet",".fa-gopuram",".fa-graduation-cap",".fa-gratipay",".fa-grav",".fa-greater-than",".fa-greater-than-equal",".fa-grimace",".fa-grin",".fa-grin-alt",".fa-grin-beam",".fa-grin-beam-sweat",".fa-grin-hearts",".fa-grin-squint",".fa-grin-squint-tears",".fa-grin-stars",".fa-grin-tears",".fa-grin-tongue",".fa-grin-tongue-squint",".fa-grin-tongue-wink",".fa-grin-wink",".fa-grip-horizontal",".fa-grip-lines",".fa-grip-lines-vertical",".fa-grip-vertical",".fa-gripfire",".fa-grunt",".fa-guilded",".fa-guitar",".fa-gulp",".fa-h-square",".fa-hacker-news",".fa-hacker-news-square",".fa-hackerrank",".fa-hamburger",".fa-hammer",".fa-hamsa",".fa-hand-holding",".fa-hand-holding-heart",".fa-hand-holding-medical",".fa-hand-holding-usd",".fa-hand-holding-water",".fa-hand-lizard",".fa-hand-middle-finger",".fa-hand-paper",".fa-hand-peace",".fa-hand-point-down",".fa-hand-point-left",".fa-hand-point-right",".fa-hand-point-up",".fa-hand-pointer",".fa-hand-rock",".fa-hand-scissors",".fa-hand-sparkles",".fa-hand-spock",".fa-hands",".fa-hands-helping",".fa-hands-wash",".fa-handshake",".fa-handshake-alt-slash",".fa-handshake-slash",".fa-hanukiah",".fa-hard-hat",".fa-hashtag",".fa-hat-cowboy",".fa-hat-cowboy-side",".fa-hat-wizard",".fa-hdd",".fa-head-side-cough",".fa-head-side-cough-slash",".fa-head-side-mask",".fa-head-side-virus",".fa-heading",".fa-headphones",".fa-headphones-alt",".fa-headset",".fa-heart",".fa-heart-broken",".fa-heartbeat",".fa-helicopter",".fa-highlighter",".fa-hiking",".fa-hippo",".fa-hips",".fa-hire-a-helper",".fa-history",".fa-hive",".fa-hockey-puck",".fa-holly-berry",".fa-home",".fa-hooli",".fa-hornbill",".fa-horse",".fa-horse-head",".fa-hospital",".fa-hospital-alt",".fa-hospital-symbol",".fa-hospital-user",".fa-hot-tub",".fa-hotdog",".fa-hotel",".fa-hotjar",".fa-hourglass",".fa-hourglass-end",".fa-hourglass-half",".fa-hourglass-start",".fa-house-damage",".fa-house-user",".fa-houzz",".fa-hryvnia",".fa-html5",".fa-hubspot",".fa-i-cursor",".fa-ice-cream",".fa-icicles",".fa-icons",".fa-id-badge",".fa-id-card",".fa-id-card-alt",".fa-ideal",".fa-igloo",".fa-image",".fa-images",".fa-imdb",".fa-inbox",".fa-indent",".fa-industry",".fa-infinity",".fa-info",".fa-info-circle",".fa-innosoft",".fa-instagram",".fa-instagram-square",".fa-instalod",".fa-intercom",".fa-internet-explorer",".fa-inverse",".fa-invision",".fa-ioxhost",".fa-italic",".fa-itch-io",".fa-itunes",".fa-itunes-note",".fa-java",".fa-jedi",".fa-jedi-order",".fa-jenkins",".fa-jira",".fa-joget",".fa-joint",".fa-joomla",".fa-journal-whills",".fa-js",".fa-js-square",".fa-jsfiddle",".fa-kaaba",".fa-kaggle",".fa-key",".fa-keybase",".fa-keyboard",".fa-keycdn",".fa-khanda",".fa-kickstarter",".fa-kickstarter-k",".fa-kiss",".fa-kiss-beam",".fa-kiss-wink-heart",".fa-kiwi-bird",".fa-korvue",".fa-landmark",".fa-language",".fa-laptop",".fa-laptop-code",".fa-laptop-house",".fa-laptop-medical",".fa-laravel",".fa-lastfm",".fa-lastfm-square",".fa-laugh",".fa-laugh-beam",".fa-laugh-squint",".fa-laugh-wink",".fa-layer-group",".fa-leaf",".fa-leanpub",".fa-lemon",".fa-less",".fa-less-than",".fa-less-than-equal",".fa-level-down-alt",".fa-level-up-alt",".fa-lg",".fa-li",".fa-life-ring",".fa-lightbulb",".fa-line",".fa-link",".fa-linkedin",".fa-linkedin-in",".fa-linode",".fa-linux",".fa-lira-sign",".fa-list",".fa-list-alt",".fa-list-ol",".fa-list-ul",".fa-location-arrow",".fa-lock",".fa-lock-open",".fa-long-arrow-alt-down",".fa-long-arrow-alt-left",".fa-long-arrow-alt-right",".fa-long-arrow-alt-up",".fa-low-vision",".fa-luggage-cart",".fa-lungs",".fa-lungs-virus",".fa-lyft",".fa-magento",".fa-magic",".fa-magnet",".fa-mail-bulk",".fa-mailchimp",".fa-male",".fa-mandalorian",".fa-map",".fa-map-marked",".fa-map-marked-alt",".fa-map-marker",".fa-map-marker-alt",".fa-map-pin",".fa-map-signs",".fa-markdown",".fa-marker",".fa-mars",".fa-mars-double",".fa-mars-stroke",".fa-mars-stroke-h",".fa-mars-stroke-v",".fa-mask",".fa-mastodon",".fa-maxcdn",".fa-mdb",".fa-medal",".fa-medapps",".fa-medium",".fa-medium-m",".fa-medkit",".fa-medrt",".fa-meetup",".fa-megaport",".fa-meh",".fa-meh-blank",".fa-meh-rolling-eyes",".fa-memory",".fa-mendeley",".fa-menorah",".fa-mercury",".fa-meteor",".fa-microblog",".fa-microchip",".fa-microphone",".fa-microphone-alt",".fa-microphone-alt-slash",".fa-microphone-slash",".fa-microscope",".fa-microsoft",".fa-minus",".fa-minus-circle",".fa-minus-square",".fa-mitten",".fa-mix",".fa-mixcloud",".fa-mixer",".fa-mizuni",".fa-mobile",".fa-mobile-alt",".fa-modx",".fa-monero",".fa-money-bill",".fa-money-bill-alt",".fa-money-bill-wave",".fa-money-bill-wave-alt",".fa-money-check",".fa-money-check-alt",".fa-monument",".fa-moon",".fa-mortar-pestle",".fa-mosque",".fa-motorcycle",".fa-mountain",".fa-mouse",".fa-mouse-pointer",".fa-mug-hot",".fa-music",".fa-napster",".fa-neos",".fa-network-wired",".fa-neuter",".fa-newspaper",".fa-nimblr",".fa-node",".fa-node-js",".fa-not-equal",".fa-notes-medical",".fa-npm",".fa-ns8",".fa-nutritionix",".fa-object-group",".fa-object-ungroup",".fa-octopus-deploy",".fa-odnoklassniki",".fa-odnoklassniki-square",".fa-oil-can",".fa-old-republic",".fa-om",".fa-opencart",".fa-openid",".fa-opera",".fa-optin-monster",".fa-orcid",".fa-osi",".fa-otter",".fa-outdent",".fa-page4",".fa-pagelines",".fa-pager",".fa-paint-brush",".fa-paint-roller",".fa-palette",".fa-palfed",".fa-pallet",".fa-paper-plane",".fa-paperclip",".fa-parachute-box",".fa-paragraph",".fa-parking",".fa-passport",".fa-pastafarianism",".fa-paste",".fa-patreon",".fa-pause",".fa-pause-circle",".fa-paw",".fa-paypal",".fa-peace",".fa-pen",".fa-pen-alt",".fa-pen-fancy",".fa-pen-nib",".fa-pen-square",".fa-pencil-alt",".fa-pencil-ruler",".fa-penny-arcade",".fa-people-arrows",".fa-people-carry",".fa-pepper-hot",".fa-perbyte",".fa-percent",".fa-percentage",".fa-periscope",".fa-person-booth",".fa-phabricator",".fa-phoenix-framework",".fa-phoenix-squadron",".fa-phone",".fa-phone-alt",".fa-phone-slash",".fa-phone-square",".fa-phone-square-alt",".fa-phone-volume",".fa-photo-video",".fa-php",".fa-pied-piper",".fa-pied-piper-alt",".fa-pied-piper-hat",".fa-pied-piper-pp",".fa-pied-piper-square",".fa-piggy-bank",".fa-pills",".fa-pinterest",".fa-pinterest-p",".fa-pinterest-square",".fa-pizza-slice",".fa-place-of-worship",".fa-plane",".fa-plane-arrival",".fa-plane-departure",".fa-plane-slash",".fa-play",".fa-play-circle",".fa-playstation",".fa-plug",".fa-plus",".fa-plus-circle",".fa-plus-square",".fa-podcast",".fa-poll",".fa-poll-h",".fa-poo",".fa-poo-storm",".fa-poop",".fa-portrait",".fa-pound-sign",".fa-power-off",".fa-pray",".fa-praying-hands",".fa-prescription",".fa-prescription-bottle",".fa-prescription-bottle-alt",".fa-print",".fa-procedures",".fa-product-hunt",".fa-project-diagram",".fa-pull-left",".fa-pull-right",".fa-pulse",".fa-pump-medical",".fa-pump-soap",".fa-pushed",".fa-puzzle-piece",".fa-python",".fa-qq",".fa-qrcode",".fa-question",".fa-question-circle",".fa-quidditch",".fa-quinscape",".fa-quora",".fa-quote-left",".fa-quote-right",".fa-quran",".fa-r-project",".fa-radiation",".fa-radiation-alt",".fa-rainbow",".fa-random",".fa-raspberry-pi",".fa-ravelry",".fa-react",".fa-reacteurope",".fa-readme",".fa-rebel",".fa-receipt",".fa-record-vinyl",".fa-recycle",".fa-red-river",".fa-reddit",".fa-reddit-alien",".fa-reddit-square",".fa-redhat",".fa-redo",".fa-redo-alt",".fa-registered",".fa-remove-format",".fa-renren",".fa-reply",".fa-reply-all",".fa-replyd",".fa-republican",".fa-researchgate",".fa-resolving",".fa-restroom",".fa-retweet",".fa-rev",".fa-ribbon",".fa-ring",".fa-road",".fa-robot",".fa-rocket",".fa-rocketchat",".fa-rockrms",".fa-rotate-180",".fa-rotate-270",".fa-rotate-90",".fa-route",".fa-rss",".fa-rss-square",".fa-ruble-sign",".fa-ruler",".fa-ruler-combined",".fa-ruler-horizontal",".fa-ruler-vertical",".fa-running",".fa-rupee-sign",".fa-rust",".fa-sad-cry",".fa-sad-tear",".fa-safari",".fa-salesforce",".fa-sass",".fa-satellite",".fa-satellite-dish",".fa-save",".fa-schlix",".fa-school",".fa-screwdriver",".fa-scribd",".fa-scroll",".fa-sd-card",".fa-search",".fa-search-dollar",".fa-search-location",".fa-search-minus",".fa-search-plus",".fa-searchengin",".fa-seedling",".fa-sellcast",".fa-sellsy",".fa-server",".fa-servicestack",".fa-shapes",".fa-share",".fa-share-alt",".fa-share-alt-square",".fa-share-square",".fa-shekel-sign",".fa-shield-alt",".fa-shield-virus",".fa-ship",".fa-shipping-fast",".fa-shirtsinbulk",".fa-shoe-prints",".fa-shopify",".fa-shopping-bag",".fa-shopping-basket",".fa-shopping-cart",".fa-shopware",".fa-shower",".fa-shuttle-van",".fa-sign",".fa-sign-in-alt",".fa-sign-language",".fa-sign-out-alt",".fa-signal",".fa-signature",".fa-sim-card",".fa-simplybuilt",".fa-sink",".fa-sistrix",".fa-sitemap",".fa-sith",".fa-skating",".fa-sketch",".fa-skiing",".fa-skiing-nordic",".fa-skull",".fa-skull-crossbones",".fa-skyatlas",".fa-skype",".fa-slack",".fa-slack-hash",".fa-slash",".fa-sleigh",".fa-sliders-h",".fa-slideshare",".fa-sm",".fa-smile",".fa-smile-beam",".fa-smile-wink",".fa-smog",".fa-smoking",".fa-smoking-ban",".fa-sms",".fa-snapchat",".fa-snapchat-ghost",".fa-snapchat-square",".fa-snowboarding",".fa-snowflake",".fa-snowman",".fa-snowplow",".fa-soap",".fa-socks",".fa-solar-panel",".fa-sort",".fa-sort-alpha-down",".fa-sort-alpha-down-alt",".fa-sort-alpha-up",".fa-sort-alpha-up-alt",".fa-sort-amount-down",".fa-sort-amount-down-alt",".fa-sort-amount-up",".fa-sort-amount-up-alt",".fa-sort-down",".fa-sort-numeric-down",".fa-sort-numeric-down-alt",".fa-sort-numeric-up",".fa-sort-numeric-up-alt",".fa-sort-up",".fa-soundcloud",".fa-sourcetree",".fa-spa",".fa-space-shuttle",".fa-speakap",".fa-speaker-deck",".fa-spell-check",".fa-spider",".fa-spin",".fa-spinner",".fa-splotch",".fa-spotify",".fa-spray-can",".fa-square",".fa-square-full",".fa-square-root-alt",".fa-squarespace",".fa-stack",".fa-stack-1x",".fa-stack-2x",".fa-stack-exchange",".fa-stack-overflow",".fa-stackpath",".fa-stamp",".fa-star",".fa-star-and-crescent",".fa-star-half",".fa-star-half-alt",".fa-star-of-david",".fa-star-of-life",".fa-staylinked",".fa-steam",".fa-steam-square",".fa-steam-symbol",".fa-step-backward",".fa-step-forward",".fa-stethoscope",".fa-sticker-mule",".fa-sticky-note",".fa-stop",".fa-stop-circle",".fa-stopwatch",".fa-stopwatch-20",".fa-store",".fa-store-alt",".fa-store-alt-slash",".fa-store-slash",".fa-strava",".fa-stream",".fa-street-view",".fa-strikethrough",".fa-stripe",".fa-stripe-s",".fa-stroopwafel",".fa-studiovinari",".fa-stumbleupon",".fa-stumbleupon-circle",".fa-subscript",".fa-subway",".fa-suitcase",".fa-suitcase-rolling",".fa-sun",".fa-superpowers",".fa-superscript",".fa-supple",".fa-surprise",".fa-suse",".fa-swatchbook",".fa-swift",".fa-swimmer",".fa-swimming-pool",".fa-symfony",".fa-synagogue",".fa-sync",".fa-sync-alt",".fa-syringe",".fa-table",".fa-table-tennis",".fa-tablet",".fa-tablet-alt",".fa-tablets",".fa-tachometer-alt",".fa-tag",".fa-tags",".fa-tape",".fa-tasks",".fa-taxi",".fa-teamspeak",".fa-teeth",".fa-teeth-open",".fa-telegram",".fa-telegram-plane",".fa-temperature-high",".fa-temperature-low",".fa-tencent-weibo",".fa-tenge",".fa-terminal",".fa-text-height",".fa-text-width",".fa-th",".fa-th-large",".fa-th-list",".fa-the-red-yeti",".fa-theater-masks",".fa-themeco",".fa-themeisle",".fa-thermometer",".fa-thermometer-empty",".fa-thermometer-full",".fa-thermometer-half",".fa-thermometer-quarter",".fa-thermometer-three-quarters",".fa-think-peaks",".fa-thumbs-down",".fa-thumbs-up",".fa-thumbtack",".fa-ticket-alt",".fa-tiktok",".fa-times",".fa-times-circle",".fa-tint",".fa-tint-slash",".fa-tired",".fa-toggle-off",".fa-toggle-on",".fa-toilet",".fa-toilet-paper",".fa-toilet-paper-slash",".fa-toolbox",".fa-tools",".fa-tooth",".fa-torah",".fa-torii-gate",".fa-tractor",".fa-trade-federation",".fa-trademark",".fa-traffic-light",".fa-trailer",".fa-train",".fa-tram",".fa-transgender",".fa-transgender-alt",".fa-trash",".fa-trash-alt",".fa-trash-restore",".fa-trash-restore-alt",".fa-tree",".fa-trello",".fa-trophy",".fa-truck",".fa-truck-loading",".fa-truck-monster",".fa-truck-moving",".fa-truck-pickup",".fa-tshirt",".fa-tty",".fa-tumblr",".fa-tumblr-square",".fa-tv",".fa-twitch",".fa-twitter",".fa-twitter-square",".fa-typo3",".fa-uber",".fa-ubuntu",".fa-uikit",".fa-ul",".fa-ul > li",".fa-umbraco",".fa-umbrella",".fa-umbrella-beach",".fa-uncharted",".fa-underline",".fa-undo",".fa-undo-alt",".fa-uniregistry",".fa-unity",".fa-universal-access",".fa-university",".fa-unlink",".fa-unlock",".fa-unlock-alt",".fa-unsplash",".fa-untappd",".fa-upload",".fa-ups",".fa-usb",".fa-user",".fa-user-alt",".fa-user-alt-slash",".fa-user-astronaut",".fa-user-check",".fa-user-circle",".fa-user-clock",".fa-user-cog",".fa-user-edit",".fa-user-friends",".fa-user-graduate",".fa-user-injured",".fa-user-lock",".fa-user-md",".fa-user-minus",".fa-user-ninja",".fa-user-nurse",".fa-user-plus",".fa-user-secret",".fa-user-shield",".fa-user-slash",".fa-user-tag",".fa-user-tie",".fa-user-times",".fa-users",".fa-users-cog",".fa-users-slash",".fa-usps",".fa-ussunnah",".fa-utensil-spoon",".fa-utensils",".fa-vaadin",".fa-vector-square",".fa-venus",".fa-venus-double",".fa-venus-mars",".fa-vest",".fa-vest-patches",".fa-viacoin",".fa-viadeo",".fa-viadeo-square",".fa-vial",".fa-vials",".fa-viber",".fa-video",".fa-video-slash",".fa-vihara",".fa-vimeo",".fa-vimeo-square",".fa-vimeo-v",".fa-vine",".fa-virus",".fa-virus-slash",".fa-viruses",".fa-vk",".fa-vnv",".fa-voicemail",".fa-volleyball-ball",".fa-volume-down",".fa-volume-mute",".fa-volume-off",".fa-volume-up",".fa-vote-yea",".fa-vr-cardboard",".fa-vuejs",".fa-walking",".fa-wallet",".fa-warehouse",".fa-watchman-monitoring",".fa-water",".fa-wave-square",".fa-waze",".fa-weebly",".fa-weibo",".fa-weight",".fa-weight-hanging",".fa-weixin",".fa-whatsapp",".fa-whatsapp-square",".fa-wheelchair",".fa-whmcs",".fa-wifi",".fa-wikipedia-w",".fa-wind",".fa-window-close",".fa-window-maximize",".fa-window-minimize",".fa-window-restore",".fa-windows",".fa-wine-bottle",".fa-wine-glass",".fa-wine-glass-alt",".fa-wix",".fa-wizards-of-the-coast",".fa-wodu",".fa-wolf-pack-battalion",".fa-won-sign",".fa-wordpress",".fa-wordpress-simple",".fa-wpbeginner",".fa-wpexplorer",".fa-wpforms",".fa-wpressr",".fa-wrench",".fa-x-ray",".fa-xbox",".fa-xing",".fa-xing-square",".fa-xs",".fa-y-combinator",".fa-yahoo",".fa-yammer",".fa-yandex",".fa-yandex-international",".fa-yarn",".fa-yelp",".fa-yen-sign",".fa-yin-yang",".fa-yoast",".fa-youtube",".fa-youtube-square",".fa-zhihu",".fa.fa-pull-left",".fa.fa-pull-right",".fab",".fab.fa-pull-left",".fab.fa-pull-right",".fad",".fal",".fal.fa-pull-left",".fal.fa-pull-right",".fancybox-active",".fancybox-animated",".fancybox-bg",".fancybox-button",".fancybox-button div",".fancybox-button svg",".fancybox-button svg path",".fancybox-button.fancybox-focus",".fancybox-button[disabled]",".fancybox-can-pan .fancybox-content",".fancybox-can-swipe .fancybox-content",".fancybox-can-zoomIn .fancybox-content",".fancybox-can-zoomOut .fancybox-content",".fancybox-caption",".fancybox-caption a",".fancybox-caption--separate",".fancybox-caption__body",".fancybox-close-small",".fancybox-container",".fancybox-container *",".fancybox-container [data-selectable=\"true\"]",".fancybox-content",".fancybox-error",".fancybox-error p",".fancybox-fx-circular.fancybox-slide--current",".fancybox-fx-circular.fancybox-slide--next",".fancybox-fx-circular.fancybox-slide--previous",".fancybox-fx-fade.fancybox-slide--current",".fancybox-fx-fade.fancybox-slide--next",".fancybox-fx-fade.fancybox-slide--previous",".fancybox-fx-rotate.fancybox-slide--current",".fancybox-fx-rotate.fancybox-slide--next",".fancybox-fx-rotate.fancybox-slide--previous",".fancybox-fx-slide.fancybox-slide--current",".fancybox-fx-slide.fancybox-slide--next",".fancybox-fx-slide.fancybox-slide--previous",".fancybox-fx-tube.fancybox-slide--current",".fancybox-fx-tube.fancybox-slide--next",".fancybox-fx-tube.fancybox-slide--previous",".fancybox-fx-zoom-in-out.fancybox-slide--current",".fancybox-fx-zoom-in-out.fancybox-slide--next",".fancybox-fx-zoom-in-out.fancybox-slide--previous",".fancybox-iframe",".fancybox-image",".fancybox-infobar",".fancybox-inner",".fancybox-is-grabbing .fancybox-content",".fancybox-is-hidden",".fancybox-is-open .fancybox-bg",".fancybox-is-open .fancybox-stage",".fancybox-is-scaling .fancybox-close-small",".fancybox-is-sliding .fancybox-slide",".fancybox-is-zoomable.fancybox-can-pan .fancybox-close-small",".fancybox-loading",".fancybox-navigation .fancybox-button",".fancybox-navigation .fancybox-button div",".fancybox-navigation .fancybox-button--arrow_left",".fancybox-navigation .fancybox-button--arrow_right",".fancybox-outer",".fancybox-progress",".fancybox-share",".fancybox-share h1",".fancybox-share p",".fancybox-share__button",".fancybox-share__button svg",".fancybox-share__button svg path",".fancybox-share__button--fb",".fancybox-share__button--pt",".fancybox-share__button--tw",".fancybox-share__input",".fancybox-show-caption .fancybox-caption",".fancybox-show-infobar .fancybox-infobar",".fancybox-show-nav .fancybox-navigation .fancybox-button",".fancybox-show-thumbs .fancybox-inner",".fancybox-show-thumbs .fancybox-thumbs",".fancybox-show-toolbar .fancybox-toolbar",".fancybox-slide",".fancybox-slide--current",".fancybox-slide--html",".fancybox-slide--html .fancybox-close-small",".fancybox-slide--iframe .fancybox-content",".fancybox-slide--image",".fancybox-slide--image .fancybox-close-small",".fancybox-slide--image .fancybox-content",".fancybox-slide--image.fancybox-is-scaling .fancybox-content",".fancybox-slide--map .fancybox-content",".fancybox-slide--next",".fancybox-slide--pdf .fancybox-content",".fancybox-slide--previous",".fancybox-slide--video .fancybox-content",".fancybox-spaceball",".fancybox-stage",".fancybox-thumbs",".fancybox-thumbs-x",".fancybox-thumbs-x .fancybox-thumbs__list",".fancybox-thumbs-y .fancybox-thumbs__list",".fancybox-thumbs__list",".fancybox-thumbs__list a",".fancybox-thumbs__list a.fancybox-thumbs-active",".fancybox-toolbar",".fancybox-video",".far",".far.fa-pull-left",".far.fa-pull-right",".fas",".fas.fa-pull-left",".fas.fa-pull-right",".footer-wrapper",".footer-wrapper a img",".form input[type=\"date\"]",".form input[type=\"email\"]",".form input[type=\"number\"]",".form input[type=\"password\"]",".form input[type=\"text\"]",".form select",".form textarea",".form.pretty-form .form__item",".g-footer",".g-footer .footer-wrapper",".g-footer .footer-wrapper .to-site",".g-header",".g-header .header-top",".g-header .header-top-logo",".g-header .header-top-tel",".g-inner",".g-main",".g-wrapper",".gl-footer",".gl-header",".gl-main",".gl-wrapper",".green-text",".header-menu",".header-menu-item",".header-menu-item a",".header-menu-item.registation a",".header-wrapper",".header_about",".header_tel",".header_tel > div",".lnk",".loading",".loading img",".loading-text",".login-contact-box",".login-contact-box .box-left",".login-contact-box .geo",".login-contact-box-head",".login_action h1",".login_advantage",".login_advantage .slide_head",".login_advantage h1",".login_advantage img",".login_advantage table",".login_advantage td",".login_advantage_text",".login_contacts",".login_contacts .slide_head",".login_contacts h1",".login_contacts table",".login_contacts td",".login_contacts td.box",".login_events",".login_events .gap",".login_events .laction",".login_events .lnews",".login_events .login_events_back",".login_events .login_events_close",".login_events .login_events_menu",".login_events .login_events_menu img",".login_events .login_events_menu table tr td",".login_events .login_events_menu td",".login_events .login_events_menu th",".login_events .login_events_text",".login_events .login_events_text_name",".login_helptext",".login_helptext.attention",".login_news h1",".login_news span.login_news_name",".login_slide",".login_slide.login_vendors",".login_slide_container",".login_vendors",".login_vendors .isystem img",".login_vendors .mount img",".login_vendors .panels img",".login_vendors .projector img",".login_vendors .screen img",".login_vendors .slide_head",".login_vendors fieldset",".login_vendors fieldset.mount",".login_vendors h1",".login_vendors img",".login_vendors legend",".login_vendors_wrapper",".news_content ul li",".noty_buttons .extraText",".overlay-loading",".popup",".red-text",".result-messages",".show_messages > div",".show_messages.show_errors",".show_messages.show_ok",".slide_head",".slide_middle",".sr-only",".sr-only-focusable",".success",".suggestions-hint",".suggestions-input",".suggestions-nowrap",".suggestions-promo",".suggestions-promo a",".suggestions-promo svg",".suggestions-selected",".suggestions-subtext",".suggestions-subtext-delimiter",".suggestions-subtext_inline",".suggestions-subtext_label",".suggestions-suggestion",".suggestions-suggestions",".suggestions-suggestions strong",".suggestions-suggestions.suggestions-mobile",".suggestions-suggestions.suggestions-mobile .suggestions-suggestion",".suggestions-value[data-suggestion-status=\"LIQUIDATED\"]",".suggestions-wrapper",".tns-ah",".tns-autowidth",".tns-fadeIn",".tns-fadeOut",".tns-gallery",".tns-gallery > .tns-item",".tns-gallery > .tns-moving",".tns-gallery > .tns-slide-active",".tns-horizontal.tns-carousel.tns-no-subpixel > .tns-item",".tns-horizontal.tns-no-subpixel",".tns-horizontal.tns-no-subpixel > .tns-item",".tns-horizontal.tns-subpixel",".tns-horizontal.tns-subpixel > .tns-item",".tns-lazy-img",".tns-lazy-img.tns-complete",".tns-no-calc",".tns-normal",".tns-outer",".tns-outer [aria-controls]",".tns-outer [data-action]",".tns-outer [hidden]",".tns-ovh",".tns-slider",".tns-slider > .tns-item",".tns-t-ct",".tns-t-ct > div",".tns-t-subp2",".tns-transparent",".tns-visually-hidden",".tns-vpfix",".tns-vpfix > div",".tns-vpfix > li",".tooltip",".vendors_col",".xdsoft_dark .xdsoft_scrollbar > .xdsoft_scroller",".xdsoft_dark .xdsoft_time_box",".xdsoft_datetimepicker",".xdsoft_datetimepicker *",".xdsoft_datetimepicker .blue-gradient-button",".xdsoft_datetimepicker .blue-gradient-button span",".xdsoft_datetimepicker .xdsoft_calendar",".xdsoft_datetimepicker .xdsoft_calendar table",".xdsoft_datetimepicker .xdsoft_calendar td",".xdsoft_datetimepicker .xdsoft_calendar td > div",".xdsoft_datetimepicker .xdsoft_calendar td.xdsoft_current",".xdsoft_datetimepicker .xdsoft_calendar td.xdsoft_current.xdsoft_disabled",".xdsoft_datetimepicker .xdsoft_calendar td.xdsoft_default",".xdsoft_datetimepicker .xdsoft_calendar td.xdsoft_disabled",".xdsoft_datetimepicker .xdsoft_calendar td.xdsoft_highlighted_default",".xdsoft_datetimepicker .xdsoft_calendar td.xdsoft_highlighted_mint",".xdsoft_datetimepicker .xdsoft_calendar td.xdsoft_other_month",".xdsoft_datetimepicker .xdsoft_calendar td.xdsoft_other_month.xdsoft_disabled",".xdsoft_datetimepicker .xdsoft_calendar td.xdsoft_today",".xdsoft_datetimepicker .xdsoft_calendar th",".xdsoft_datetimepicker .xdsoft_copyright",".xdsoft_datetimepicker .xdsoft_copyright a",".xdsoft_datetimepicker .xdsoft_datepicker",".xdsoft_datetimepicker .xdsoft_datepicker.active",".xdsoft_datetimepicker .xdsoft_datepicker.active + .xdsoft_timepicker",".xdsoft_datetimepicker .xdsoft_label",".xdsoft_datetimepicker .xdsoft_label > .xdsoft_select",".xdsoft_datetimepicker .xdsoft_label > .xdsoft_select > div > .xdsoft_option",".xdsoft_datetimepicker .xdsoft_label > .xdsoft_select > div > .xdsoft_option.xdsoft_current",".xdsoft_datetimepicker .xdsoft_label > .xdsoft_select.xdsoft_monthselect",".xdsoft_datetimepicker .xdsoft_label > .xdsoft_select.xdsoft_yearselect",".xdsoft_datetimepicker .xdsoft_label > span",".xdsoft_datetimepicker .xdsoft_label i",".xdsoft_datetimepicker .xdsoft_month",".xdsoft_datetimepicker .xdsoft_monthpicker",".xdsoft_datetimepicker .xdsoft_next",".xdsoft_datetimepicker .xdsoft_prev",".xdsoft_datetimepicker .xdsoft_save_selected",".xdsoft_datetimepicker .xdsoft_time_box > div > div.xdsoft_disabled",".xdsoft_datetimepicker .xdsoft_timepicker",".xdsoft_datetimepicker .xdsoft_timepicker .xdsoft_next",".xdsoft_datetimepicker .xdsoft_timepicker .xdsoft_prev",".xdsoft_datetimepicker .xdsoft_timepicker .xdsoft_time_box",".xdsoft_datetimepicker .xdsoft_timepicker .xdsoft_time_box > div > div",".xdsoft_datetimepicker .xdsoft_timepicker .xdsoft_time_box > div > div.xdsoft_current",".xdsoft_datetimepicker .xdsoft_timepicker .xdsoft_time_box > div > div.xdsoft_current.xdsoft_disabled",".xdsoft_datetimepicker .xdsoft_timepicker .xdsoft_time_box > div > div.xdsoft_disabled",".xdsoft_datetimepicker .xdsoft_timepicker.active",".xdsoft_datetimepicker .xdsoft_today_button",".xdsoft_datetimepicker .xdsoft_year",".xdsoft_datetimepicker button",".xdsoft_datetimepicker iframe",".xdsoft_datetimepicker.xdsoft_dark",".xdsoft_datetimepicker.xdsoft_dark .xdsoft_calendar td",".xdsoft_datetimepicker.xdsoft_dark .xdsoft_calendar td.xdsoft_current",".xdsoft_datetimepicker.xdsoft_dark .xdsoft_calendar td.xdsoft_default",".xdsoft_datetimepicker.xdsoft_dark .xdsoft_calendar td.xdsoft_highlighted_default",".xdsoft_datetimepicker.xdsoft_dark .xdsoft_calendar td.xdsoft_highlighted_mint",".xdsoft_datetimepicker.xdsoft_dark .xdsoft_calendar td.xdsoft_today",".xdsoft_datetimepicker.xdsoft_dark .xdsoft_calendar th",".xdsoft_datetimepicker.xdsoft_dark .xdsoft_copyright",".xdsoft_datetimepicker.xdsoft_dark .xdsoft_copyright a",".xdsoft_datetimepicker.xdsoft_dark .xdsoft_label",".xdsoft_datetimepicker.xdsoft_dark .xdsoft_label > .xdsoft_select",".xdsoft_datetimepicker.xdsoft_dark .xdsoft_label > .xdsoft_select > div > .xdsoft_option",".xdsoft_datetimepicker.xdsoft_dark .xdsoft_label > .xdsoft_select > div > .xdsoft_option.xdsoft_current",".xdsoft_datetimepicker.xdsoft_dark .xdsoft_label i",".xdsoft_datetimepicker.xdsoft_dark .xdsoft_next",".xdsoft_datetimepicker.xdsoft_dark .xdsoft_prev",".xdsoft_datetimepicker.xdsoft_dark .xdsoft_timepicker .xdsoft_time_box",".xdsoft_datetimepicker.xdsoft_dark .xdsoft_timepicker .xdsoft_time_box > div > div",".xdsoft_datetimepicker.xdsoft_dark .xdsoft_timepicker .xdsoft_time_box > div > div.xdsoft_current",".xdsoft_datetimepicker.xdsoft_dark .xdsoft_today_button",".xdsoft_datetimepicker.xdsoft_inline",".xdsoft_datetimepicker.xdsoft_rtl",".xdsoft_datetimepicker.xdsoft_rtl .xdsoft_datepicker",".xdsoft_datetimepicker.xdsoft_rtl .xdsoft_scrollbar",".xdsoft_datetimepicker.xdsoft_rtl .xdsoft_timepicker",".xdsoft_datetimepicker.xdsoft_rtl .xdsoft_timepicker .xdsoft_next",".xdsoft_datetimepicker.xdsoft_rtl .xdsoft_timepicker .xdsoft_prev",".xdsoft_datetimepicker.xdsoft_showweeks .xdsoft_calendar td",".xdsoft_datetimepicker.xdsoft_showweeks .xdsoft_calendar th",".xdsoft_datetimepicker.xdsoft_showweeks .xdsoft_datepicker",".xdsoft_noselect",".xdsoft_scrollbar",".xdsoft_scrollbar > .xdsoft_scroller",".xdsoft_scroller_box",".xdsoft_time_box","a","a img","body","body.compensate-for-scrollbar","button","button.btn","button.btn.btn-large","button.btn.btn-mini","button.btn.btn-small","caption","fieldset.panels","h1","h2","h3","h4","h5","h6","html","input[type=\"submit\"].btn","input[type=\"submit\"].btn.btn-large","input[type=\"submit\"].btn.btn-mini","input[type=\"submit\"].btn.btn-small","li","table","td.login_news","ul"];pagespeed.criticalCssBeaconInit('/ngx_pagespeed_beacon','https://b2b.auvix.ru/pricelist/dealer/Price_AUVIX_dealer_csv-csv/','SZ4ydXH4tu','OZ4xx0IUq3c',pagespeed.selectors);</script><script data-pagespeed-no-defer type="text/javascript">(function(){window.pagespeed=window.pagespeed||{};var f=window.pagespeed;function h(c,a,e,b){this.f=c;this.a=a;this.b=e;this.g=b}f.beaconUrl="";
+function k(c){var a=c.f,e=window.mod_pagespeed_start,b=Number(new Date)-e,a=a+(-1==a.indexOf("?")?"?":"&"),a=a+"ets="+("load"==c.a?"load:":"unload:");if("beforeunload"!=c.a||!window.mod_pagespeed_loaded){a=a+b+("&r"+c.a+"=");if(window.performance){var b=window.performance.timing,d=b.navigationStart,g=b.requestStart,a=a+(b[c.a+"EventStart"]-d),a=a+("&nav="+(b.fetchStart-d)),a=a+("&dns="+(b.domainLookupEnd-b.domainLookupStart)),a=a+("&connect="+(b.connectEnd-b.connectStart)),a=a+("&req_start="+(g-d))+
+("&ttfb="+(b.responseStart-g)),a=a+("&dwld="+(b.responseEnd-b.responseStart)),a=a+("&dom_c="+(b.domContentLoadedEventStart-d));window.performance.navigation&&(a+="&nt="+window.performance.navigation.type);d=-1;b.msFirstPaint?d=b.msFirstPaint:window.chrome&&window.chrome.loadTimes&&(d=Math.floor(1E3*window.chrome.loadTimes().firstPaintTime));d-=g;0<=d&&(a+="&fp="+d)}else a+=b;f.getResourceTimingData&&window.parent==window&&(a+=f.getResourceTimingData());a+=window.parent!=window?"&ifr=1":"&ifr=0";"load"==
+c.a&&(window.mod_pagespeed_loaded=!0,(b=window.mod_pagespeed_num_resources_prefetched)&&(a+="&nrp="+b),(b=window.mod_pagespeed_prefetch_start)&&(a+="&htmlAt="+(e-b)));f.criticalCss&&(e=f.criticalCss,a+="&ccis="+e.total_critical_inlined_size+"&cces="+e.total_original_external_size+"&ccos="+e.total_overhead_size+"&ccrl="+e.num_replaced_links+"&ccul="+e.num_unreplaced_links);a+="&dpr="+window.devicePixelRatio;""!=c.b&&(a+=c.b);document.referrer&&(a+="&ref="+encodeURIComponent(document.referrer));a+=
+"&url="+encodeURIComponent(c.g);f.beaconUrl=a;(new Image).src=a}}f.c=function(c,a,e,b){var d=new h(c,a,e,b);window.addEventListener?window.addEventListener(a,function(){k(d)},!1):window.attachEvent("on"+a,function(){k(d)})};f.addInstrumentationInit=f.c;})();
+
+pagespeed.addInstrumentationInit('/ngx_pagespeed_beacon', 'load', '', 'https://b2b.auvix.ru/pricelist/dealer/Price_AUVIX_dealer_csv-csv/');</script></body>
+</html>
