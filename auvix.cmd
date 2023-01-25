@@ -1,3 +1,3 @@
 python.exe auvix.py
 
- pause
+rem pause
