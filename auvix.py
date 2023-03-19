@@ -243,6 +243,7 @@ def download( cfg ):
     login       = cfg.get('download','login'    )
     password    = cfg.get('download','password' )
     url_lk      = cfg.get('download','url_lk'   )
+    url_file    = cfg.get('download','url_file'   )
 
     download_path= os.path.join(os.getcwd(), 'tmp')
     if not os.path.exists(download_path):
@@ -321,22 +322,15 @@ def download( cfg ):
         driver.implicitly_wait(30)
         
         driver.get(url_lk)
-        driver.get("https://b2b.auvix.ru/")
-        # 3 | click | name=login | 
         driver.find_element(By.NAME, "login").click()
-        # 4 | type | name=login | Av-prom2014
-        driver.find_element(By.NAME, "login").send_keys("Av-prom2014")
-        # 5 | click | name=password | 
+        driver.find_element(By.NAME, "login").send_keys(login)
         driver.find_element(By.NAME, "password").click()
-        # 6 | type | name=password | 2120830Av
-        driver.find_element(By.NAME, "password").send_keys("2120830Av")
-        # 7 | click | css=.auth-btn | 
+        driver.find_element(By.NAME, "password").send_keys(password)
         driver.find_element(By.CSS_SELECTOR, ".auth-btn").click()
-        # 8 | click | linkText=Прайс-листы | 
         driver.find_element(By.LINK_TEXT, "Прайс-листы").click()
-        # 9 | click | xpath=//a[3]/div[2] | 
-        driver.find_element(By.XPATH, "//a[3]/div[2]").click()
-
+        #driver.find_element(By.XPATH, "//a[3]/div[2]").click()
+        driver.get(url_file)
+        
         time.sleep(5)
         driver.quit()
 
