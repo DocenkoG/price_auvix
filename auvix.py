@@ -319,7 +319,8 @@ def download( cfg ):
             driver = webdriver.Firefox(ffprofile, executable_path=r'/usr/local/bin/geckodriver')
         elif os.name == 'nt':
             driver = webdriver.Firefox(ffprofile)
-        driver.implicitly_wait(30)
+        driver.implicitly_wait(33)
+        driver.set_page_load_timeout(33)
         
         driver.get(url_lk)
         driver.find_element(By.NAME, "login").click()
